@@ -4,7 +4,7 @@ session_start();
 ob_start();
 $servername ="localhost";
 $username ="root";
-$password ="damilola92";
+$password ="";
 $db_name ="fmcphy_gen";
 $gen = new Mysqli($servername, $username, $password, $db_name);
 if ($gen->connect_errno)

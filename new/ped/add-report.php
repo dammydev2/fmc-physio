@@ -1,10 +1,12 @@
 <?php
 include("include/connect.php");
-
+//other DB
+$db_name ="fmcphy_gen";
+$gen = new Mysqli($servername, $username, $password, $db_name);
 if (isset($_POST['Search'])) {
 	$id = $_POST['id'];
 	$sel = "SELECT * FROM reg WHERE p_id='$id'";
-	$res = $conn->query($sel);
+	$res = $gen->query($sel);
 	if ($res->num_rows < 1) {
 		echo "<script>
 		alert('no record found');
@@ -89,7 +91,7 @@ if (isset($_POST['submit'])) {
 					<div class="col-sm-4">
 						<form method="POST">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Patient id</label>
+								<label for="exampleInputEmail1">Physio Number</label>
 								<input type="text" name="id" class="form-control" id="exampleInputEmail1" />
 							</div>
 							<button type="submit" class="btn btn-default" name="Search">Search</button>

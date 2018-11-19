@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 $servername = "localhost";
 $username = "root";
-$password = "damilola92";
+$password = "";
 $db = "fmcphy_ped";
 
 // Create connection

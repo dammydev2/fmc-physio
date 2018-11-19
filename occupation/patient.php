@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-group">
                   <label>Therapist’s Name</label>
-                  <input type="text" class="form-control" name="Therapist" placeholder="Therapist’s name" required>
+                  <input type="text" value="<?php echo($_SESSION['user']); ?>" readonly class="form-control" name="Therapist" placeholder="Therapist’s name" required>
                 </div>
                 <div style="text-align: center;">
                   <button type="submit" class="btn btn-success" name="submit">Continue</button>

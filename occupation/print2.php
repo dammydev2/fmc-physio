@@ -1,25 +1,10 @@
 <?php
 include("include/connect.php");
 $id = $_SESSION['num'];
-$rec_num = $_SESSION['rec_num'];
+$rec_num = $_SESSION['rec'];
 
 /**::::::::THE CONTINUE BUTTON::::::**/
-if (isset($_POST['submit'])) {
-    extract($_POST);
-    //$c = count($_POST['question']);
-    $ins = "INSERT INTO fmcphy_occp.nxt VALUES(NULL,'$num','$rec','$Assessment','$Occupation')";
-    $res = $conn->query($ins);
-    if ($res === TRUE) {
-        $_SESSION['num'] = $num;
-        $_SESSION['rec'] = $rec;
-        ?>
-        <meta http-equiv="refresh" content="0; URL=http:print2.php">
-        <?php
-    }
-    else{
-        echo $conn->error;
-    }
-}
+
 ?>
 <style type="text/css">
     @media print {

@@ -1,25 +1,35 @@
 <?php
 include("db-connect.php");
+//error_reporting(E_ALL);
 if(isset($_POST['submit'])){
 	extract($_POST);
 	//echo $user;
 	$sel = "SELECT * FROM login WHERE user='$User' AND pass='$password' AND type='$type'";
 	$res = $gen->query($sel);
-	if ($res->num_rows == 1) {
-		if($type == "front"){
+	echo $type;
+	while ($row = $res->fetch_array()) {
+		$User = $row['name'];
+	}
+	if ($res->num_rows > 0) {
+		if($type == "Front Desk"){
+			$_SESSION['user'] = $User;
 			header("Location: front");
 		}
-		if($type == "ped"){
+		if($type == "Paedratic"){
+			$_SESSION['user'] = $User;
 			header("Location: new/ped/index.php");
 		}
-		if($type == "phy"){
-			header("Location: fmcphy/muscle.php");
+		if($type == "Neurology"){
+			$_SESSION['user'] = $User;
+			header("Location: fmcphy/start.php");
 		}
-		if($type == "occ"){
+		if($type == "Occupation"){
+			$_SESSION['user'] = $User;
 			header("Location: Occupation");
 		}
-		if($type == "ort"){
-			header("Location: Ortho");
+		if($type == "ORTHOPAEDIC"){
+			$_SESSION['user'] = $User;
+			header("Location: ortho/index.php");
 		}
 	}
 	else{
@@ -65,24 +75,24 @@ if(isset($_POST['submit'])){
 	</div>
 	<div class="w3ls-login box box--big">
 		<!-- form starts here -->
-		<form action="#" method="POST">
+		<form action="#" method="POST" style="background-color: rgba(0, 200, 0, 0.2)">
 			<div class="agile-field-txt">
 				<label><i class="fa fa-user" aria-hidden="true"></i> User type &nbsp;&nbsp;&nbsp;&nbsp;</label>
 				<select name="type" class="form-control col-sm-5">
-					<option value="front">Front Desk</option>
-					<option value="ped">Pedratic</option>
-					<option value="phy">Neurology</option>
-					<option value="occ">Occupation</option>
-					<option value="ort">ORTHOPAEDIC</option>
+					<option value="Front Desk">Front Desk</option>
+					<option value="Paedratic">Pedratic</option>
+					<option value="Neurology">Neurology</option>
+					<option value="Occupation">Occupation</option>
+					<option value="ORTHOPAEDIC">ORTHOPAEDIC</option>
 				</select>
 			</div>
 			<div class="agile-field-txt">
 				<label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
-				<input type="text" name="User" placeholder="Enter User Name" />
+				<input type="text" name="User" placeholder="Enter User Name" style="background-color: white; color: black" />
 			</div>
 			<div class="agile-field-txt">
 				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
-				<input type="password" name="password" placeholder="Enter Password" id="myInput" />
+				<input type="password" name="password" placeholder="Enter Password" style="background-color: white; color: black" id="myInput" />
 				<div class="agile_label">
 					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
 					<label class="check" for="check3">Show password</label>

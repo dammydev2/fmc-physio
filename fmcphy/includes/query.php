@@ -1,14 +1,15 @@
 <?php
 include "db.php";
+ $_SESSION['user'];
 error_reporting(E_ALL);
-$query = "INSERT INTO report(issue,plain,limb,dt,num,tp,receipt) VALUES";
+$query = "INSERT INTO report(issue,plain,limb,dt,num,tp,receipt,analysis,diagnosis,physio) VALUES";
 $c = count($_POST['issue']);
 
 extract($_POST);
 
 for($a = 0; $a < $c; $a++)
 {
-	 $query .= "('".$issue[$a]."', '".$plain[$a]."', '".$limb[$a]."', '".$date[$a]."', '".$num[$a]."', '".$type[$a]."', '".$rec[$a]."'),";
+	 $query .= "('".$issue[$a]."', '".$plain[$a]."', '".$limb[$a]."', '".$date[$a]."', '".$num[$a]."', '".$type[$a]."', '".$rec[$a]."','','', '".$_SESSION['user']."'),";
 }
 
 $query = substr($query, 0, -1);

@@ -1,6 +1,8 @@
 <?php
 include('includes/db.php');
 $nhis = $_SESSION['nhis'];
+$idtwo = $_SESSION['idtwo'];
+$rec = $_SESSION['rec'];
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ $nhis = $_SESSION['nhis'];
         <!-- end navbar-header -->
 
         <!-- navbar side -->
-        <?php include('includes/navbar.php'); ?>
+        <?php include('includes/nav2.php'); ?>
         <!-- end navbar side -->
 
         <!--  page-wrapper -->
@@ -60,11 +62,8 @@ $nhis = $_SESSION['nhis'];
                 <legend>SUMMARY OF PROBLEM COMPLICATION</legend>
 
                 <div class="form-group">
-
-
-
-
-
+                    <input type="text" name="idtwo" value="<?php echo($idtwo) ?>" style="display: none;">
+                    <input type="text" name="rec" value="<?php echo($rec) ?>"  style="display: none;">
 
                     <div class="col-lg-6 ">
                         <div class="form-group">
@@ -122,7 +121,7 @@ $nhis = $_SESSION['nhis'];
      </div>
  </div>
 
- <div class="col-lg-6 ">
+ <!--div class="col-lg-6 ">
     <div class="form-group">
         <div class="input-group w3_w3layouts col-lg-12">
             <span class="input-group-addon" id="basic-addon1">MOBILITY INDEX SCORE</span>
@@ -137,7 +136,7 @@ $nhis = $_SESSION['nhis'];
             </select>
         </div>
     </div>
-</div>
+</div-->
 <div class="col-lg-10 ">
     <div class="form-group">
         <div class="input-group w3_w3layouts col-lg-12">
@@ -149,6 +148,9 @@ $nhis = $_SESSION['nhis'];
 </div>
 <table class="table" border="1">
     <tr>
+        <th colspan="2" class="text-center"><h3>THE MODIFIED RIVERMEAD MOBILITY INDEX</h3></th>
+    </tr>
+	<tr>
         <th>Item</th>
         <th>Score</th>
     </tr>
@@ -160,12 +162,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -177,12 +179,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -195,12 +197,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -213,12 +215,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -231,12 +233,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -249,12 +251,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -266,12 +268,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>
@@ -283,12 +285,12 @@ $nhis = $_SESSION['nhis'];
         </td>
         <td>
             <select name="answer[]" class="form-control">
-                <option value="0">Unable to perform</option>
-                <option value="1">assistance of two people</option>
-                <option value="2">assistance of one people</option>
-                <option value="3">requires supervision or verbal instruction</option>
-                <option value="4">requires an aid or an appliance</option>
-                <option value="5">independent</option>
+                <option value="Unable to perform">Unable to perform</option>
+                <option value="assistance of two people">assistance of two people</option>
+                <option value="assistance of one people">assistance of one people</option>
+                <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
+                <option value="requires an aid or an appliance">requires an aid or an appliance</option>
+                <option value="independent">independent</option>
             </select>
         </td>
     </tr>

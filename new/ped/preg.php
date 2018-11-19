@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 	$c = 3;
 	for($a = 0; $a < $c; $a++)
 	{ 
-		$ins = "INSERT INTO fmcphy.preg VALUES(NULL,'$num','$lenght','$weight','$rec','$physio','$related','".$issue[$a]."','".$answer[$a]."','".$comment[$a]."')";
+		$ins = "INSERT INTO fmcphy_ped.preg VALUES(NULL,'$num','$lenght','$weight','$rec','$physio','$related','".$issue[$a]."','".$answer[$a]."','".$comment[$a]."')";
 		$res = $conn->query($ins);
 		if ($res === TRUE) {
 			?>
@@ -135,7 +135,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" required name="physio" class="form-control" id="exampleInputEmail1" />
+										<input type="text" value="<?php echo($_SESSION['user']); ?>" readonly required name="physio" class="form-control" id="exampleInputEmail1" />
 									</div>
 									<p>&nbsp;</p>
 									<textarea name="related" placeholder="Other related information" class="form-control"></textarea>

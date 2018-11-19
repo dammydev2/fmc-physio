@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 	for($a = 0; $a < $c; $a++)
 	{ 
 		$complain[$a];
-		$ins = "INSERT INTO fmcphy.complain VALUES(NULL,'$num2','".$complain[$a]."','$physio','$info','$rec')";
+		$ins = "INSERT INTO fmcphy_ped.complain VALUES(NULL,'$num2','".$complain[$a]."','$physio','$info','$rec')";
 		$res = $conn->query($ins);
 		if ($res === TRUE) {
 			?>
@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" name="physio" required class="form-control" id="exampleInputEmail1" />
+										<input type="text" name="physio" value="<?php echo($_SESSION['user']); ?>" readonly required class="form-control" id="exampleInputEmail1" />
 										<input type="text" name="rec" value="<?php echo($rec); ?>" required class="form-control" id="exampleInputEmail1" style="display: none;" />
 									</div>
 									<p>&nbsp;</p>

@@ -25,9 +25,9 @@
 			<li><a href="index.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 
 
-			<li id="menu-academico" ><a href="add-patient.php"><i class="fa fa-envelope nav_icon"></i><span>Add Patient</span><div class="clearfix"></div></a></li>
-			<li><a href="view.php"><i class="fa fa-picture-o" aria-hidden="true"></i><span>View patient</span><div class="clearfix"></div></a></li>
-			<li id="menu-academico" ><a href="view-report.php"><i class="fa fa-bar-chart"></i><span>View Report</span><div class="clearfix"></div></a></li>
+			<li id="menu-academico" ><a href="add.php"><i class="fa fa-envelope nav_icon"></i><span>Add Patient</span><div class="clearfix"></div></a></li>
+			<li><a href="index.php"><i class="fa fa-picture-o" aria-hidden="true"></i><span>View patient</span><div class="clearfix"></div></a></li>
+			<!--li id="menu-academico" ><a href="view-report.php"><i class="fa fa-bar-chart"></i><span>View Report</span><div class="clearfix"></div></a></li-->
 			<li id="menu-academico" ><a href="../index.php"><i class="fa fa-bar-chart"></i><span>Logout</span><div class="clearfix"></div></a></li>
 			<!--li id="menu-academico" ><a href="#"><i class="fa fa-list-ul" aria-hidden="true"></i><span> Short Codes</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 				<ul id="menu-academico-sub" >

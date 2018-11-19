@@ -22,10 +22,10 @@ if (isset($_POST['submit'])) {
 	$c = 4;
 	for($a = 0; $a < $c; $a++)
 	{ 
-		$ins = "INSERT INTO fmcphy.education VALUES(NULL,'$num','$rec','".$issue[$a]."','".$answer[$a]."','".$comment[$a]."')";
+		$ins = "INSERT INTO fmcphy_ped.education VALUES(NULL,'$num','$rec','".$issue[$a]."','".$answer[$a]."','".$comment[$a]."')";
 		$res = $conn->query($ins);
 	}
-	$ins = "INSERT INTO fmcphy.education2 VALUES(NULL,'$num','$grade','$often','$long','$grp','$sp_comment','$tp_service','$whom','$tp_comment','$religious','$goal','$physio','$related','$rec')";
+	$ins = "INSERT INTO fmcphy_ped.education2 VALUES(NULL,'$num','$grade','$often','$long','$grp','$sp_comment','$tp_service','$whom','$tp_comment','$religious','$goal','$physio','$related','$rec')";
 		$res2 = $conn->query($ins);
 		if ($res === TRUE && $res2 === TRUE) {
 			?>
@@ -190,7 +190,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" required name="physio" class="form-control" id="exampleInputEmail1" />
+										<input type="text" value="<?php echo($_SESSION['user']); ?>" readonly required name="physio" class="form-control" id="exampleInputEmail1" />
 									</div>
 									<p>&nbsp;</p>
 									<textarea name="related" placeholder="Additional Related information" class="form-control"></textarea>

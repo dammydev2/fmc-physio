@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 	for($a = 0; $a < $c; $a++)
 	{ 
 		$complain[$a];
-		$ins = "INSERT INTO fmcphy.prev_1 VALUES(NULL,'$num2','$health','".$describe[$a]."','$physio','$info','$rec')";
+		$ins = "INSERT INTO fmcphy_ped.prev_1 VALUES(NULL,'$num2','$health','".$describe[$a]."','$physio','$info','$rec')";
 		$res = $conn->query($ins);
 		/**
 		if ($res === TRUE) {
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 	for($a = 0; $a < $c; $a++)
 	{ 
 		$complain[$a];
-		$ins = "INSERT INTO fmcphy.prev_2 VALUES(NULL,'$num2','".$other[$a]."','".$comment[$a]."','$physio','$info','$rec')";
+		$ins = "INSERT INTO fmcphy_ped.prev_2 VALUES(NULL,'$num2','".$other[$a]."','".$comment[$a]."','$physio','$info','$rec')";
 		$res2 = $conn->query($ins);
 	}
 	if ($res === TRUE AND $res2 === TRUE) {
@@ -176,7 +176,7 @@ if (isset($_POST['submit'])) {
 												<td><input type="text" class="form-control" name="comment[]" placeholder="if yes. treatment?"></td>
 											</tr>
 											<tr>
-												<td><input type="text" name="other[]" value="have you ever purchased or rented durable Medical Equipment, orthortics, prosthetics or supplies?"></td>
+												<td><textarea name="other[]" readonly="" class="form-control">have you ever purchased or rented durable Medical Equipment, orthortics, prosthetics or supplies?</textarea></td>
 												<td><input type="text" class="form-control" name="comment[]" placeholder="iPlease explain"></td>
 											</tr>
 										</table>
@@ -186,7 +186,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" name="physio" required class="form-control" id="exampleInputEmail1" />
+										<input type="text" name="physio" value="<?php echo($_SESSION['user']); ?>" readonly required class="form-control" id="exampleInputEmail1" />
 										<input type="text" name="rec" value="<?php echo($rec); ?>" required class="form-control" id="exampleInputEmail1" style="display: none;" />
 									</div>
 									<p>&nbsp;</p>

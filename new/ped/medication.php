@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 	$date_notices = $_POST['date_notices'];
 	$lang = $_POST['lang'];
 	$rec = $_POST['rec'];
-	$ins = "INSERT INTO fmcphy.medication VALUES(NULL,'$num','$physio','$related','$medication','$communication','$date_notices','$lang','$rec')";
+	$ins = "INSERT INTO fmcphy_ped.medication VALUES(NULL,'$num','$physio','$related','$medication','$communication','$date_notices','$lang','$rec')";
 	$res = $conn->query($ins);
 	if ($res === TRUE) {
 		?>
@@ -103,7 +103,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" required name="physio" class="form-control" id="exampleInputEmail1" />
+										<input type="text" value="<?php echo($_SESSION['user']); ?>" readonly required name="physio" class="form-control" id="exampleInputEmail1" />
 									</div>
 									<p>&nbsp;</p>
 									<textarea name="related" placeholder="Other related information" class="form-control"></textarea>

@@ -1,22 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Nov 07, 2018 at 02:17 PM
--- Server version: 5.7.23
--- PHP Version: 7.2.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `fmcphy_ped`
@@ -73,7 +55,10 @@ INSERT INTO `complain` (`id`, `num`, `complain`, `physio`, `info`, `rec`) VALUES
 (29, 'PRED_10', '', 'Yakubu opeyemi', 'aaa', 100006),
 (30, 'PRED_10', 'mobility', 'Yakubu opeyemi', 'nnn', 100007),
 (31, 'PRED_10', 'Language', 'Yakubu opeyemi', 'nnn', 100007),
-(32, 'PRED_10', '', 'Yakubu opeyemi', 'nnn', 100007);
+(32, 'PRED_10', '', 'Yakubu opeyemi', 'nnn', 100007),
+(33, 'PRED_10', 'Fine Motor (handwriting, buttoning)', 'John Mark', 'iuedni', 100013),
+(34, 'PRED_10', 'speech', 'John Mark', 'iuedni', 100013),
+(35, 'PRED_10', '', 'John Mark', 'iuedni', 100013);
 
 -- --------------------------------------------------------
 
@@ -103,10 +88,14 @@ INSERT INTO `education` (`id`, `num`, `rec`, `issue`, `answer`, `comment`) VALUE
 (6, 'PRED_10', '100006', 'has your child ever repeat a grade?', 'no', ''),
 (7, 'PRED_10', '100006', 'Does your child have special education or theraohy services in school?', 'no', ''),
 (8, 'PRED_10', '100006', 'Has your child receive theraphy anywhere else?', 'no', ''),
-(9, 'PRED_10', '100007', 'Does your child attend school?', 'yes', 'idi aba'),
-(10, 'PRED_10', '100007', 'has your child ever repeat a grade?', 'no', ''),
-(11, 'PRED_10', '100007', 'Does your child have special education or theraohy services in school?', 'no', ''),
-(12, 'PRED_10', '100007', 'Has your child receive theraphy anywhere else?', 'no', '');
+(9, 'PRED_11', '100007', 'Does your child attend school?', 'yes', 'idi aba'),
+(10, 'PRED_11', '100007', 'has your child ever repeat a grade?', 'no', ''),
+(11, 'PRED_11', '100007', 'Does your child have special education or theraohy services in school?', 'no', ''),
+(12, 'PRED_11', '100007', 'Has your child receive theraphy anywhere else?', 'no', ''),
+(13, 'PRED_10', '100013', 'Does your child attend school?', 'yes', 'habhanh'),
+(14, 'PRED_10', '100013', 'has your child ever repeat a grade?', 'no', ''),
+(15, 'PRED_10', '100013', 'Does your child have special education or theraohy services in school?', 'no', ''),
+(16, 'PRED_10', '100013', 'Has your child receive theraphy anywhere else?', 'yes', '');
 
 -- --------------------------------------------------------
 
@@ -139,7 +128,8 @@ CREATE TABLE `education2` (
 INSERT INTO `education2` (`id`, `num`, `grade`, `often`, `lg`, `grp`, `sp_comment`, `tp_service`, `whom`, `tp_comment`, `religious`, `goal`, `physio`, `related`, `rec`) VALUES
 (1, 'PRED_10', 'nursery', 'not at all', 'not applicable', 'pre-nursery', 'nil', 'General Hospital, Ijaye', 'doctor', 'Additional info on theraphy service', 'no', 'To be able to walk again', 'Yakubu opeyemi', 'Additional information on theraphy', ''),
 (5, 'PRED_10', 'nursery', 'not at all', 'not applicable', 'pre-nursery', 'nil', 'General Hospital, Ijaye', 'doctor', 'Additional info on theraphy service', 'no', 'To be able to walk again', 'Yakubu opeyemi', 'aaa', ''),
-(6, 'PRED_10', 'nursery', 'not at all', 'not applicable', 'pre-nursery', 'nil', 'General Hospital, Ijaye', 'doctor', 'Additional info on theraphy service', 'no', 'To be able to walk again', 'Yakubu opeyemi', 'aaa', '100007');
+(6, 'PRED_10', 'nursery', 'not at all', 'not applicable', 'pre-nursery', 'nil', 'General Hospital, Ijaye', 'doctor', 'Additional info on theraphy service', 'no', 'To be able to walk again', 'Yakubu opeyemi', 'aaa', '100007'),
+(7, 'PRED_10', 'nursery', 'not at all', 'not applicable', 'pre-nursery', 'nil', 'General Hospital, Ijaye', 'doctor', 'Additional info on theraphy service', 'no', 'To be able to walk again', 'John Mark', 'nm kj', '100013');
 
 -- --------------------------------------------------------
 
@@ -203,7 +193,10 @@ INSERT INTO `growth_1` (`id`, `num`, `des`, `physio`, `info`, `rec`) VALUES
 (40, 'PRED_10', 'clumsy', 'Yakubu opeyemi', 'lll', '100007'),
 (41, 'PRED_10', 'Has nervours habits', 'Yakubu opeyemi', 'lll', '100007'),
 (42, 'PRED_10', 'Difficulty learning new task', 'Yakubu opeyemi', 'lll', '100007'),
-(43, 'PRED_10', '', 'Yakubu opeyemi', 'lll', '100007');
+(43, 'PRED_10', '', 'Yakubu opeyemi', 'lll', '100007'),
+(44, 'PRED_10', 'clumsy', 'df vf', 'f ', '100013'),
+(45, 'PRED_10', 'Has nervours habits', 'df vf', 'f ', '100013'),
+(46, 'PRED_10', '', 'df vf', 'f ', '100013');
 
 -- --------------------------------------------------------
 
@@ -297,7 +290,91 @@ INSERT INTO `growth_2` (`id`, `num`, `question`, `answer`, `physio`, `info`, `re
 (69, 'PRED_10', 'Drink from cup', '1', 'Yakubu opeyemi', 'lll', '100007'),
 (70, 'PRED_10', 'use a spoon', '3', 'Yakubu opeyemi', 'lll', '100007'),
 (71, 'PRED_10', 'Dress independently', '3', 'Yakubu opeyemi', 'lll', '100007'),
-(72, 'PRED_10', 'Toilet train', '3', 'Yakubu opeyemi', 'lll', '100007');
+(72, 'PRED_10', 'Toilet train', '3', 'Yakubu opeyemi', 'lll', '100007'),
+(73, 'PRED_10', 'Roll over from stomach to back', 'other here', 'John Mark', 'grbrbs', '100013'),
+(74, 'PRED_10', 'Roll over from back to stomach', '3', 'John Mark', 'grbrbs', '100013'),
+(75, 'PRED_10', 'sit independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(76, 'PRED_10', 'crawl', 'other here', 'John Mark', 'grbrbs', '100013'),
+(77, 'PRED_10', 'walk holding unto furniture', '3', 'John Mark', 'grbrbs', '100013'),
+(78, 'PRED_10', 'walk independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(79, 'PRED_10', 'speak first word', 'fdg', 'John Mark', 'grbrbs', '100013'),
+(80, 'PRED_10', 'speak in two words sentence', 'other here', 'John Mark', 'grbrbs', '100013'),
+(81, 'PRED_10', 'Drink from cup', 'tbgyby', 'John Mark', 'grbrbs', '100013'),
+(82, 'PRED_10', 'use a spoon', 'tge er', 'John Mark', 'grbrbs', '100013'),
+(83, 'PRED_10', 'Dress independently', 'sfsd', 'John Mark', 'grbrbs', '100013'),
+(84, 'PRED_10', 'Toilet train', 'sfvdfs', 'John Mark', 'grbrbs', '100013'),
+(85, 'PRED_10', 'Roll over from stomach to back', 'other here', 'John Mark', 'grbrbs', '100013'),
+(86, 'PRED_10', 'Roll over from back to stomach', '3', 'John Mark', 'grbrbs', '100013'),
+(87, 'PRED_10', 'sit independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(88, 'PRED_10', 'crawl', 'other here', 'John Mark', 'grbrbs', '100013'),
+(89, 'PRED_10', 'walk holding unto furniture', '3', 'John Mark', 'grbrbs', '100013'),
+(90, 'PRED_10', 'walk independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(91, 'PRED_10', 'speak first word', 'fdg', 'John Mark', 'grbrbs', '100013'),
+(92, 'PRED_10', 'speak in two words sentence', 'other here', 'John Mark', 'grbrbs', '100013'),
+(93, 'PRED_10', 'Drink from cup', 'tbgyby', 'John Mark', 'grbrbs', '100013'),
+(94, 'PRED_10', 'use a spoon', 'tge er', 'John Mark', 'grbrbs', '100013'),
+(95, 'PRED_10', 'Dress independently', 'sfsd', 'John Mark', 'grbrbs', '100013'),
+(96, 'PRED_10', 'Toilet train', 'sfvdfs', 'John Mark', 'grbrbs', '100013'),
+(97, 'PRED_10', 'Roll over from stomach to back', 'other here', 'John Mark', 'grbrbs', '100013'),
+(98, 'PRED_10', 'Roll over from back to stomach', '3', 'John Mark', 'grbrbs', '100013'),
+(99, 'PRED_10', 'sit independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(100, 'PRED_10', 'crawl', 'other here', 'John Mark', 'grbrbs', '100013'),
+(101, 'PRED_10', 'walk holding unto furniture', '3', 'John Mark', 'grbrbs', '100013'),
+(102, 'PRED_10', 'walk independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(103, 'PRED_10', 'speak first word', 'fdg', 'John Mark', 'grbrbs', '100013'),
+(104, 'PRED_10', 'speak in two words sentence', 'other here', 'John Mark', 'grbrbs', '100013'),
+(105, 'PRED_10', 'Drink from cup', 'tbgyby', 'John Mark', 'grbrbs', '100013'),
+(106, 'PRED_10', 'use a spoon', 'tge er', 'John Mark', 'grbrbs', '100013'),
+(107, 'PRED_10', 'Dress independently', 'sfsd', 'John Mark', 'grbrbs', '100013'),
+(108, 'PRED_10', 'Toilet train', 'sfvdfs', 'John Mark', 'grbrbs', '100013'),
+(109, 'PRED_10', 'Roll over from stomach to back', 'other here', 'John Mark', 'grbrbs', '100013'),
+(110, 'PRED_10', 'Roll over from back to stomach', '3', 'John Mark', 'grbrbs', '100013'),
+(111, 'PRED_10', 'sit independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(112, 'PRED_10', 'crawl', 'other here', 'John Mark', 'grbrbs', '100013'),
+(113, 'PRED_10', 'walk holding unto furniture', '3', 'John Mark', 'grbrbs', '100013'),
+(114, 'PRED_10', 'walk independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(115, 'PRED_10', 'speak first word', 'fdg', 'John Mark', 'grbrbs', '100013'),
+(116, 'PRED_10', 'speak in two words sentence', 'other here', 'John Mark', 'grbrbs', '100013'),
+(117, 'PRED_10', 'Drink from cup', 'tbgyby', 'John Mark', 'grbrbs', '100013'),
+(118, 'PRED_10', 'use a spoon', 'tge er', 'John Mark', 'grbrbs', '100013'),
+(119, 'PRED_10', 'Dress independently', 'sfsd', 'John Mark', 'grbrbs', '100013'),
+(120, 'PRED_10', 'Toilet train', 'sfvdfs', 'John Mark', 'grbrbs', '100013'),
+(121, 'PRED_10', 'Roll over from stomach to back', 'other here', 'John Mark', 'grbrbs', '100013'),
+(122, 'PRED_10', 'Roll over from back to stomach', '3', 'John Mark', 'grbrbs', '100013'),
+(123, 'PRED_10', 'sit independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(124, 'PRED_10', 'crawl', 'other here', 'John Mark', 'grbrbs', '100013'),
+(125, 'PRED_10', 'walk holding unto furniture', '3', 'John Mark', 'grbrbs', '100013'),
+(126, 'PRED_10', 'walk independently', 'others goes here', 'John Mark', 'grbrbs', '100013'),
+(127, 'PRED_10', 'speak first word', 'fdg', 'John Mark', 'grbrbs', '100013'),
+(128, 'PRED_10', 'speak in two words sentence', 'other here', 'John Mark', 'grbrbs', '100013'),
+(129, 'PRED_10', 'Drink from cup', 'tbgyby', 'John Mark', 'grbrbs', '100013'),
+(130, 'PRED_10', 'use a spoon', 'tge er', 'John Mark', 'grbrbs', '100013'),
+(131, 'PRED_10', 'Dress independently', 'sfsd', 'John Mark', 'grbrbs', '100013'),
+(132, 'PRED_10', 'Toilet train', 'sfvdfs', 'John Mark', 'grbrbs', '100013'),
+(133, 'PRED_10', 'Roll over from stomach to back', 'rwfteq', 'df vf', 'f ', '100013'),
+(134, 'PRED_10', 'Roll over from back to stomach', 'rgverw', 'df vf', 'f ', '100013'),
+(135, 'PRED_10', 'sit independently', 'sada', 'df vf', 'f ', '100013'),
+(136, 'PRED_10', 'crawl', 'jyny', 'df vf', 'f ', '100013'),
+(137, 'PRED_10', 'walk holding unto furniture', 'edewar', 'df vf', 'f ', '100013'),
+(138, 'PRED_10', 'walk independently', 'erfterw', 'df vf', 'f ', '100013'),
+(139, 'PRED_10', 'speak first word', 'grwtv', 'df vf', 'f ', '100013'),
+(140, 'PRED_10', 'speak in two words sentence', 'erqewq', 'df vf', 'f ', '100013'),
+(141, 'PRED_10', 'Drink from cup', 'rtvtrw', 'df vf', 'f ', '100013'),
+(142, 'PRED_10', 'use a spoon', 'erwcre', 'df vf', 'f ', '100013'),
+(143, 'PRED_10', 'Dress independently', 'wqecwq', 'df vf', 'f ', '100013'),
+(144, 'PRED_10', 'Toilet train', 'wqefqwfer', 'df vf', 'f ', '100013'),
+(145, 'PRED_10', 'Roll over from stomach to back', 'rwfteq', 'df vf', 'f ', '100013'),
+(146, 'PRED_10', 'Roll over from back to stomach', 'rgverw', 'df vf', 'f ', '100013'),
+(147, 'PRED_10', 'sit independently', 'sada', 'df vf', 'f ', '100013'),
+(148, 'PRED_10', 'crawl', 'jyny', 'df vf', 'f ', '100013'),
+(149, 'PRED_10', 'walk holding unto furniture', 'edewar', 'df vf', 'f ', '100013'),
+(150, 'PRED_10', 'walk independently', 'erfterw', 'df vf', 'f ', '100013'),
+(151, 'PRED_10', 'speak first word', 'grwtv', 'df vf', 'f ', '100013'),
+(152, 'PRED_10', 'speak in two words sentence', 'erqewq', 'df vf', 'f ', '100013'),
+(153, 'PRED_10', 'Drink from cup', 'rtvtrw', 'df vf', 'f ', '100013'),
+(154, 'PRED_10', 'use a spoon', 'erwcre', 'df vf', 'f ', '100013'),
+(155, 'PRED_10', 'Dress independently', 'wqecwq', 'df vf', 'f ', '100013'),
+(156, 'PRED_10', 'Toilet train', 'wqefqwfer', 'df vf', 'f ', '100013');
 
 -- --------------------------------------------------------
 
@@ -382,7 +459,8 @@ INSERT INTO `medication` (`id`, `num`, `physio`, `related`, `medication`, `commu
 (4, 'PRED_10', 'Yakubu opeyemi', 'fe', 'ddd', 'terg', '2018-10-20', 'Yoruba', '100004'),
 (5, 'PRED_10', 'Yakubu opeyemi', 'related information on communication history', 'medications', 'communication difficuty', '2018-10-21', 'Yoruba', '100005'),
 (6, 'PRED_10', 'Yakubu opeyemi', 'dd', 'medications', 'description', '2018-10-21', 'Yoruba', '100006'),
-(7, 'PRED_10', 'Yakubu opeyemi', 'aided', 'other medications', 'no communication difficulty', '2018-10-20', 'Yoruba', '100007');
+(7, 'PRED_10', 'Yakubu opeyemi', 'aided', 'other medications', 'no communication difficulty', '2018-10-20', 'Yoruba', '100007'),
+(8, 'PRED_10', 'John Mark', 'dcdsf', 'fdasf', 'dfasf', '2018-11-16', 'Yoruba', '100013');
 
 -- --------------------------------------------------------
 
@@ -469,7 +547,10 @@ INSERT INTO `precaution` (`id`, `num`, `rec`, `physio`, `related`, `issue`, `ans
 (15, 'PRED_10', '100006', 'Yakubu opeyemi', 'ccc', 'Does your child have any moverment restrictions?', 'no', 'habhanh'),
 (16, 'PRED_10', '100007', 'Yakubu opeyemi', 'aaa', 'are there any factors that may complicate your childs ability to participate in the theraphy?\" ', 'no', ''),
 (17, 'PRED_10', '100007', 'Yakubu opeyemi', 'aaa', 'Does your child have food allergies?', 'no', ''),
-(18, 'PRED_10', '100007', 'Yakubu opeyemi', 'aaa', 'Does your child have any moverment restrictions?', 'no', '');
+(18, 'PRED_10', '100007', 'Yakubu opeyemi', 'aaa', 'Does your child have any moverment restrictions?', 'no', ''),
+(19, 'PRED_10', '100013', 'John Mark', 'rsgv r', 'are there any factors that may complicate your childs ability to participate in the theraphy?\" ', 'yes', ''),
+(20, 'PRED_10', '100013', 'John Mark', 'rsgv r', 'Does your child have food allergies?', 'no', ''),
+(21, 'PRED_10', '100013', 'John Mark', 'rsgv r', 'Does your child have any moverment restrictions?', 'yes', '');
 
 -- --------------------------------------------------------
 
@@ -515,7 +596,10 @@ INSERT INTO `preg` (`id`, `num`, `lenght`, `weight`, `rec`, `physio`, `related`,
 (18, 'PRED_10', '1.2m', '3kg', '100006', 'Yakubu opeyemi', 'aaa', 'was labour and delivery normal', 'no', ''),
 (19, 'PRED_10', '1.2m', '3kg', '100007', 'Yakubu opeyemi', 'mmm', 'Were there any complication during pregnancy', 'yes', ''),
 (20, 'PRED_10', '1.2m', '3kg', '100007', 'Yakubu opeyemi', 'mmm', 'was the pregnancy full term', 'no', ''),
-(21, 'PRED_10', '1.2m', '3kg', '100007', 'Yakubu opeyemi', 'mmm', 'was labour and delivery normal', 'no', '');
+(21, 'PRED_10', '1.2m', '3kg', '100007', 'Yakubu opeyemi', 'mmm', 'was labour and delivery normal', 'no', ''),
+(22, 'PRED_10', '1.2m', '3kg', '100013', 'John Mark', 'fsgsr', 'Were there any complication during pregnancy', 'yes', 'habhanh'),
+(23, 'PRED_10', '1.2m', '3kg', '100013', 'John Mark', 'fsgsr', 'was the pregnancy full term', 'no', 'habhanh'),
+(24, 'PRED_10', '1.2m', '3kg', '100013', 'John Mark', 'fsgsr', 'was labour and delivery normal', 'yes', 'habhanh');
 
 -- --------------------------------------------------------
 
@@ -607,7 +691,13 @@ INSERT INTO `prev_1` (`id`, `num`, `health`, `des`, `physio`, `info`, `rec`) VAL
 (67, 'PRED_10', 'Good', 'pnemonia', 'Yakubu opeyemi', 'aaa', '100007'),
 (68, 'PRED_10', 'Good', 'diabetis type I and II', 'Yakubu opeyemi', 'aaa', '100007'),
 (69, 'PRED_10', 'Good', 'mumps', 'Yakubu opeyemi', 'aaa', '100007'),
-(70, 'PRED_10', 'Good', '', 'Yakubu opeyemi', 'aaa', '100007');
+(70, 'PRED_10', 'Good', '', 'Yakubu opeyemi', 'aaa', '100007'),
+(71, 'PRED_10', 'Good', 'Ringing of the ear', 'John Mark', 'fv ef', '100013'),
+(72, 'PRED_10', 'Good', 'Head injury', 'John Mark', 'fv ef', '100013'),
+(73, 'PRED_10', 'Good', 'Stroke/TIA', 'John Mark', 'fv ef', '100013'),
+(74, 'PRED_10', 'Good', 'hypoglycemia', 'John Mark', 'fv ef', '100013'),
+(75, 'PRED_10', 'Good', 'depresion', 'John Mark', 'fv ef', '100013'),
+(76, 'PRED_10', 'Good', '', 'John Mark', 'fv ef', '100013');
 
 -- --------------------------------------------------------
 
@@ -647,7 +737,10 @@ INSERT INTO `prev_2` (`id`, `num`, `other`, `comment`, `physio`, `info`, `rec`) 
 (15, 'PRED_10', '', '', 'Yakubu opeyemi', 'aaa', '100006'),
 (16, 'PRED_10', 'Earache/Ear defection', '', 'Yakubu opeyemi', 'aaa', '100007'),
 (17, 'PRED_10', 'Earing difficulties', 'aided', 'Yakubu opeyemi', 'aaa', '100007'),
-(18, 'PRED_10', 'PE ear tubes inserted', '', 'Yakubu opeyemi', 'aaa', '100007');
+(18, 'PRED_10', 'PE ear tubes inserted', '', 'Yakubu opeyemi', 'aaa', '100007'),
+(19, 'PRED_10', 'Earache/Ear defection', 'habhanh', 'John Mark', 'fv ef', '100013'),
+(20, 'PRED_10', 'Earing difficulties', 'factors here', 'John Mark', 'fv ef', '100013'),
+(21, 'PRED_10', 'have you ever purchased or rented durable Medical Equipment, orthortics, prosthetics or supplies?', '', 'John Mark', 'fv ef', '100013');
 
 -- --------------------------------------------------------
 
@@ -665,30 +758,7 @@ CREATE TABLE `receipt` (
 --
 
 INSERT INTO `receipt` (`id`, `rec_num`) VALUES
-(1, 100009);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `reg`
---
-
-CREATE TABLE `reg` (
-  `id` int(200) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `p_id` varchar(10) NOT NULL,
-  `DOB` varchar(10) NOT NULL,
-  `eval_date` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `reg`
---
-
-INSERT INTO `reg` (`id`, `name`, `p_id`, `DOB`, `eval_date`) VALUES
-(3, 'Yakubu Damilola', 'PRED_10', '2018-10-14', '2018-10-13'),
-(4, 'Sofine Fegolli', 'PRED_11', '2018-10-06', '2018-10-21'),
-(5, 'Yakubu Damilola', 'PRED_12', '2018-10-27', '2018-10-06');
+(1, 100013);
 
 -- --------------------------------------------------------
 
@@ -724,7 +794,8 @@ INSERT INTO `social` (`id`, `num`, `fnamw`, `fage`, `focc`, `mname`, `mage`, `mo
 (3, 'PRED_10', 'Adebayo Olaitan', 20, 'Lawyer', 'Adebayo Shade', 33, 'Trader', 'yes', '3', 'married', 'Father and Mother', '100004', 'Yakubu opeyemi', 'ewr'),
 (4, 'PRED_10', 'Adebayo Olaitan', 30, 'Lawyer', 'Adebayo Shade', 14, 'Trader', 'yes', '2', 'married', 'Father and Mother', '100005', 'Ogbeni Opeyemi', 'Social hostory related information'),
 (5, 'PRED_10', 'Adebayo Olaitan', 22, 'Lawyer', 'Adebayo Shade', 11, 'Trader', 'yes', '3', 'living together', 'Father and Mother', '100006', 'Yakubu opeyemi', 'other information'),
-(6, 'PRED_10', 'Adebayo Olaitan', 23, 'Lawyer', 'Adebayo Shade', 12, 'Trader', 'yes', '4', 'married', 'Father and Mother', '100007', 'Yakubu opeyemi', 'other relaterd information');
+(6, 'PRED_10', 'Adebayo Olaitan', 23, 'Lawyer', 'Adebayo Shade', 12, 'Trader', 'yes', '4', 'married', 'Father and Mother', '100007', 'Yakubu opeyemi', 'other relaterd information'),
+(7, 'PRED_10', 'Adebayo Olaitan', 12, 'Lawyer', 'Adebayo Shade', 23, 'Trader', 'no', '', 'married', 'Father and Mother', '100013', 'John Mark', 'fda');
 
 -- --------------------------------------------------------
 
@@ -758,7 +829,10 @@ INSERT INTO `subjective` (`id`, `num`, `reason`, `prior`, `specify`, `exp`, `app
 (6, 'PRED_10', 'bruise', 'no', '', '', '2018-10-19', 'Yakubu opeyemi', 'werfvreq', 100004),
 (7, 'PRED_10', 'bruise', 'no', '', '', '2018-10-20', 'Yakubu opeyemi', 'jedfil', 100005),
 (8, 'PRED_10', 'bruise', 'no', '', '', '2018-10-06', 'Yakubu opeyemi', 'jbhb', 100006),
-(9, 'PRED_10', 'bruise', 'no', '', '', '2018-10-13', 'Yakubu opeyemi', 'lll', 100007);
+(9, 'PRED_10', 'bruise', 'no', '', '', '2018-10-13', 'Yakubu opeyemi', 'lll', 100007),
+(10, 'PRED_10', 'bruise', 'no', '', '', '2018-11-10', 'John Mark', 'gh', 100013),
+(11, 'PRED_10', 'bruise', 'no', '', '', '2018-11-10', 'John Mark', 'gh', 100013),
+(12, 'PRED_10', 'bruise', 'no', '', '', '2018-11-18', 'John Mark', 'sd', 100013);
 
 -- --------------------------------------------------------
 
@@ -794,7 +868,11 @@ INSERT INTO `table_1` (`id`, `num`, `name`, `DOB`, `rec`) VALUES
 (13, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100006),
 (14, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100007),
 (15, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100008),
-(16, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100009);
+(16, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100009),
+(17, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100010),
+(18, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100011),
+(19, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100012),
+(20, 'PRED_10', 'Yakubu Damilola', 'PRED_10', 100013);
 
 --
 -- Indexes for dumped tables
@@ -873,12 +951,6 @@ ALTER TABLE `receipt`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `reg`
---
-ALTER TABLE `reg`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `social`
 --
 ALTER TABLE `social`
@@ -904,37 +976,37 @@ ALTER TABLE `table_1`
 -- AUTO_INCREMENT for table `complain`
 --
 ALTER TABLE `complain`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `education2`
 --
 ALTER TABLE `education2`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `growth_1`
 --
 ALTER TABLE `growth_1`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `growth_2`
 --
 ALTER TABLE `growth_2`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
 -- AUTO_INCREMENT for table `medication`
 --
 ALTER TABLE `medication`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `patient_num`
@@ -946,25 +1018,25 @@ ALTER TABLE `patient_num`
 -- AUTO_INCREMENT for table `precaution`
 --
 ALTER TABLE `precaution`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `preg`
 --
 ALTER TABLE `preg`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `prev_1`
 --
 ALTER TABLE `prev_1`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `prev_2`
 --
 ALTER TABLE `prev_2`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `receipt`
@@ -973,28 +1045,22 @@ ALTER TABLE `receipt`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `reg`
---
-ALTER TABLE `reg`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `social`
 --
 ALTER TABLE `social`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subjective`
 --
 ALTER TABLE `subjective`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `table_1`
 --
 ALTER TABLE `table_1`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

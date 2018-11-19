@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 	$age = $_POST['age'];
 	$marry = $_POST['marry'];
 	$live = $_POST['live'];
-	$ins = "INSERT INTO fmcphy.social VALUES(NULL,'$num','$fname','$fage','$focc','$mname','$mage','$mocc','$adopt','$age','$marry','$live','$rec','$physio','$related')";
+	$ins = "INSERT INTO fmcphy_ped.social VALUES(NULL,'$num','$fname','$fage','$focc','$mname','$mage','$mocc','$adopt','$age','$marry','$live','$rec','$physio','$related')";
 	$res = $conn->query($ins);
 	if ($res === TRUE) {
 		?>
@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" required name="physio" class="form-control" id="exampleInputEmail1" />
+										<input type="text" value="<?php echo($_SESSION['user']); ?>" readonly required name="physio" class="form-control" id="exampleInputEmail1" />
 									</div>
 									<p>&nbsp;</p>
 									<textarea name="related" placeholder="Other related information" class="form-control"></textarea>

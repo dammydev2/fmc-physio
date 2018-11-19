@@ -2,6 +2,7 @@
 include 'includes/db.php';
 $nhis = $_SESSION['nhis'];
 $num = $_SESSION['idtwo'];
+$rec = $_SESSION['rec'];
 ?>
 <style type="text/css">
 	.layout{
@@ -21,12 +22,12 @@ $num = $_SESSION['idtwo'];
 }
 </style>
 <button onclick="window.print();" id="printPageButton">Print</button>
-<a href="dashboard.php" id="printPageButton">Return to Home</a>
+<a href="start.php" id="printPageButton">Return to Home</a>
 <div class="layout">
 	<div class="box">
-		<h2 style="text-align: center;">ASSESMENT PROTOCOL</h2>
+		<h2 style="text-align: center;">ASSESSMENT PROTOCOL</h2>
 		<?php
-		$sel = "SELECT * FROM asp1 WHERE idtwo='$num' AND nhs_no='$nhis'";
+		$sel = "SELECT * FROM asp1 WHERE idtwo='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		while ($row = $res->fetch_array()) {
 			echo "<p>Patientame: <b>".$row[2]."</b> <span style='margin-left: 50px;'>Address: <b>".$row[3]."</b></span></p>
@@ -44,7 +45,7 @@ $num = $_SESSION['idtwo'];
 	<div class="box">
 		<h2 style="text-align: center;">DIAGNOSIS / REASON FOR REFERRAL</h2>
 		<?php
-		$sel = "SELECT * FROM asp2 WHERE idtwo='$num' AND nhis='$nhis'";
+		$sel = "SELECT * FROM asp2 WHERE idtwo='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		while ($row = $res->fetch_array()) {
 			echo "<p>HCP: <b>".$row[2]."</b><span style='margin-left: 100px;'> DH: <b>".$row[4]."</b></p>
@@ -62,9 +63,9 @@ $num = $_SESSION['idtwo'];
 			?>
 	</div>
 	<div class="box">
-		<h2 style="text-align: center;">OBJECTIVE ASSESMENT</h2>
+		<h2 style="text-align: center;">OBJECTIVE ASSESSMENT</h2>
 		<?php
-		$sel = "SELECT * FROM asp WHERE idtwo='$num' AND nhis='$nhis'";
+		$sel = "SELECT * FROM asp WHERE idtwo='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		while ($row = $res->fetch_array()) {
 			echo "
@@ -84,7 +85,7 @@ $num = $_SESSION['idtwo'];
 			</table>
 			";
 		}
-		$sel = "SELECT * FROM aspques WHERE num='$num' AND nhis='$nhis'";
+		$sel = "SELECT * FROM aspques WHERE num='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		echo "<table border='1' width='50%'>
 		<tr>";
@@ -101,7 +102,7 @@ $num = $_SESSION['idtwo'];
 		</table>
 		<p></p>
 		<?php
-		$sel = "SELECT * FROM aspques2 WHERE num='$num' AND nhis='$nhis'";
+		$sel = "SELECT * FROM aspques2 WHERE num='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		echo "<table border='1' width='70%'>
 		<tr>";
@@ -119,9 +120,9 @@ $num = $_SESSION['idtwo'];
 		</table>
 	</div>
 	<div class="box">
-		<h2 style="text-align: center;">OBJECT ASSESMENT</h2>
+		<h2 style="text-align: center;">OBJECT ASSESSMENT</h2>
 		<?php
-		$sel = "SELECT * FROM asp4 WHERE idtwo='$num' AND nhis='$nhis'";
+		$sel = "SELECT * FROM asp4 WHERE idtwo='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		echo "<table border='1'>";
 		while ($row = $res->fetch_array()) {
@@ -144,7 +145,7 @@ $num = $_SESSION['idtwo'];
 			</table>
 			<?php
 			echo "<table border='1'>";
-		$sel = "SELECT * FROM object WHERE num='$num' AND nhis='$nhis'";
+		$sel = "SELECT * FROM object WHERE num='$num' AND rec='$rec'";
 		$res = $conn->query($sel);
 		echo "<table border='1' width='60%'>
 		<tr>
@@ -160,6 +161,26 @@ $num = $_SESSION['idtwo'];
 		}
 			?>
 </table>
+
+<?php
+			echo "<table border='1'>";
+		$sel = "SELECT * FROM ans WHERE num='$num' AND rec='$rec'";
+		$res = $conn->query($sel);
+		echo "<table border='1' width='60%'>";
+		while ($row = $res->fetch_array()) {
+			echo "
+			<tr>
+			<td>Analysis of Findings:<b> ".$row[3]."</b></td>
+			<td>Physical Impressions:<b>  ".$row[4]."</b></td>
+			</tr>
+			<tr>
+			<td>Plan of treatments:<b>  ".$row[5]."</b></td>
+			<td>Intervention/Means of treatments:<b>  ".$row[6]."</b></td>
+			</tr>";
+		}
+			?>
+</table>
+
 	</div>
 </div>
 

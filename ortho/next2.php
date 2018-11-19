@@ -1,5 +1,6 @@
 <?php
 include("includes/connect.php");
+//error_reporting(E_ALL);
 $num = $_SESSION['num'];
 $rec = $_SESSION['rec'];
 if (isset($_POST['submit'])) {
@@ -53,7 +54,7 @@ if (isset($_POST['submit'])) {
     $res5 = $conn->query($ins);
   }
   
-  if ($res === TRUE AND $res2 === TRUE AND $res3 === TRUE AND $res4 === TRUE AND $res5 === TRUE) {
+  if ($res === TRUE) {
    ?>
    <meta http-equiv="refresh" content="0; URL=http:next3.php">
    <?php

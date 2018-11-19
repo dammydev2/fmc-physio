@@ -32,8 +32,10 @@ $rec = $_SESSION['rec'];
 <div class="layout">
 	<p class="text-center"><b>INITIAL EVALUATION SUBJECTIVE HISTORY WORKSHEET</b></p>
 	<?php
+	$db_name ="fmcphy_gen";
+	$gen = new Mysqli($servername, $username, $password, $db_name);
 	$sel = "SELECT * FROM reg WHERE p_id='$num'";
-	$res = $conn->query($sel);
+	$res = $gen->query($sel);
 	while ($row = $res->fetch_array()) {
 		?>
 		<p>Patient Name: <?php echo $row[1];?> <span style="margin-left: 100px;"> Date of Birth: <?php echo $row[3];?> </span> <span style="margin-left: 100px;"> Date of Eval: <?php echo $row[4];?> </span></p>

@@ -1,5 +1,7 @@
 <?php
 include("include/connect.php");
+$db_name ="fmcphy_gen";
+$gen = new Mysqli($servername, $username, $password, $db_name);
 $sel = "SELECT * FROM patient_num";
 $res = $conn->query($sel);
 while ($row = $res->fetch_array()) {

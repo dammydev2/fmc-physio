@@ -90,7 +90,7 @@ $rec = $_SESSION['rec'];
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" required name="physio" class="form-control" id="exampleInputEmail1" />
+										<input type="text" required value="<?php echo($_SESSION['user']); ?>" readonly name="physio" class="form-control" id="exampleInputEmail1" />
 									</div>
 									<p>&nbsp;</p>
 									<textarea name="subjective" placeholder="Additional comments (Subjective history)" class="form-control"></textarea>

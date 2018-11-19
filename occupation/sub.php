@@ -5,7 +5,7 @@ session_start();
 //error_reporting(E_ALL);
 $servername = "localhost";
 $username = "root";
-$password = "damilola92";
+$password = "";
 $db = "fmcphy_gen";
 
 // Create connection
@@ -117,7 +117,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name of Assesor</label>
-                  <input type="text" name="Assesor"  required  class="form-control" id="exampleInputEmail1" />
+                  <input type="text" value="<?php echo($_SESSION['user']); ?>" readonly name="Assesor"  required  class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Designation</label>

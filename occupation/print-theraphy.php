@@ -5,7 +5,7 @@ $rec_num = $_SESSION['rec'];
 
 if (isset($_POST['nh'])) {
     $Physio = $_POST['Physio'];
-    $sel2 = "SELECT * FROM nxt WHERE num='$Physio' ";
+    $sel2 = "SELECT * FROM Patient WHERE num='$Physio' ";
     $res2 = $conn->query($sel2);
     if ($res2->num_rows < 1) {
       $err = "<dt style='color: red;'>No Record Found</dt>";

@@ -1,25 +1,14 @@
       <?php
       include('includes/db.php');
-      $nhis =  $_SESSION['nhis'];
-      $sel = "SELECT * FROM patient WHERE patientnum='$nhis' ";
-      $query = $conn->query($sel);
-      while ($row = $query-> fetch_array()) {
-        $nhis_num = $row[1];
-        $name = $row[2];
-        $DOB = $row[3];
-        $addr = $row[4];
-      }
-
-
-      $sel = "SELECT * FROM asp1 ORDER BY id asc ";
-      $query = $conn->query($sel);
-      while ($res = $query-> fetch_assoc()) {
-        $id = $res[id];
-        $id = $id + 200;
-        $idtwo = "phy-".$id;
-        $_SESSION['idtwo']=$idtwo;
+      $num =  $_SESSION['num'];
+      $name = $_SESSION['name'];
+      $dob = $_SESSION['dob'];
+   $sel = "SELECT * FROM receipt";
+    $res = $conn->query($sel);
+    while ($row = $res->fetch_array()) {
+      $rec_num = $row[1];
+      $rec_num = $rec_num + 1;
     }
-   
 
 
    ?>
@@ -54,7 +43,7 @@
         <!-- end navbar-header -->
 
         <!-- navbar side -->
-        <?php include('includes/navbar.php'); ?>
+        <?php include('includes/nav2.php'); ?>
         <!-- end navbar side -->
 
         <!--  page-wrapper -->
@@ -86,6 +75,7 @@
                                     <div class="input-group w3_w3layouts col-lg-12">
                                         <span class="input-group-addon" id="basic-addon1">PATIENT NAME</span>
                                         <input type="text" name="pname" readonly value="<?php echo $name; ?>" class="form-control" placeholder="Patient name" aria-describedby="basic-addon1" required=""/>
+                                        <input type="text" name="idtwo" readonly value="<?php echo $num; ?>" class="form-control" placeholder="Patient name" aria-describedby="basic-addon1" style="display: none;"/>
                                     </div>
                                 </div>
                             </div>
@@ -95,15 +85,16 @@
                                 <div class="form-group">
                                     <div class="input-group w3_w3layouts col-lg-12">
                                         <span class="input-group-addon" id="basic-addon1">ADDRESS</span>
-                                        <input type="text" name="address" value="<?php echo $addr; ?>" class="form-control" placeholder="address" aria-describedby="basic-addon1" readonly required="" />
+                                        <input type="text" name="address" value="<?php echo $addr; ?>" class="form-control" placeholder="address" aria-describedby="basic-addon1" required="" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 ">
                                 <div class="form-group">
                                     <div class="input-group w3_w3layouts col-lg-12">
-                                        <span class="input-group-addon" id="basic-addon1">NHS NO</span>
-                                        <input type="text" name="nhs_num" value="<?php echo $nhis_num; ?>" class="form-control" placeholder="nhs num" aria-describedby="basic-addon1" value="" required=""  readonly/ >
+                                        <span class="input-group-addon" id="basic-addon1">NHIS NO</span>
+                                        <input type="text" name="nhs_num" value="<?php echo $nhis_num; ?>" class="form-control" placeholder="nhs num" aria-describedby="basic-addon1" value="" required="" / >
+                                        <input type="text" name="rec" value="<?php echo $rec_num; ?>" class="form-control" placeholder="nhs num" aria-describedby="basic-addon1" value="" style="display: none;" required="" / >
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +110,7 @@
                                 <div class="form-group">
                                     <div class="input-group w3_w3layouts col-lg-12">
                                         <span class="input-group-addon" id="basic-addon1">D.O.B</span>
-                                        <input type="date" name="dob" readonly value="<?php echo $DOB; ?>" class="form-control" placeholder="date of birth" aria-describedby="basic-addon1" required="" / >
+                                        <input type="date" name="dob" readonly value="<?php echo $dob; ?>" readonly class="form-control" placeholder="date of birth" aria-describedby="basic-addon1" required="" / >
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +139,7 @@
                             <div class="col-lg-6 ">
                                 <div class="form-group">
                                     <div class="input-group w3_w3layouts col-lg-12">
-                                        <span class="input-group-addon" id="basic-addon1">ADDMISSION DATE</span>
+                                        <span class="input-group-addon" id="basic-addon1">ADMISSION DATE</span>
                                         <input type="date" name="addmission" class="form-control" placeholder="" aria-describedby="basic-addon1" required="" / >
                                     </div>
                                 </div>

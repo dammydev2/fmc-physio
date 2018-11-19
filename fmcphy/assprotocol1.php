@@ -1,6 +1,8 @@
 <?php
 include('includes/db.php');
 $nhis = $_SESSION['nhis'];
+$rec = $_SESSION['rec'];
+$idtwo = $_SESSION['idtwo'];
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ $nhis = $_SESSION['nhis'];
     <!-- end navbar-header -->
 
     <!-- navbar side -->
-    <?php include('includes/navbar.php'); ?>
+    <?php include('includes/nav2.php'); ?>
     <!-- end navbar side -->
 
     <!--  page-wrapper -->
@@ -56,10 +58,10 @@ $nhis = $_SESSION['nhis'];
       </div>
       <div class="col-lg-12 main">
         <!-- panel default -->
-        <form method="POST" action="#">
+        <form method="POST" action="controller/assnext.php">
           <fieldset>
             <legend>ACUTE NEUROLOGICAL ASSESSMENT</legend>
-
+            <input type="text" name="idtwo" value="<?php echo($idtwo) ?>" style="display: none;">
             <div class="form-group">
              <div class="col-lg-6 ">
               <div class="form-group">
@@ -155,7 +157,7 @@ $nhis = $_SESSION['nhis'];
     <div class="col-lg-6 ">
       <div class="form-group">
         <div class="input-group w3_w3layouts col-lg-12">
-         <label for="exampleFormControlTextarea1">Bed Mobility manual handling and positioning isues</label>
+         <label for="exampleFormControlTextarea1">Bed Mobility manual handling and positioning issues</label>
          <textarea name="bedmobility" class="form-control" placeholder="" aria-describedby="basic-addon1" rows="2" required="" / > </textarea>
        </div>
      </div>
@@ -170,7 +172,8 @@ $nhis = $_SESSION['nhis'];
       <td><input type="number" name="answer[]" placeholder="Enter patient value" min="99" max="180" class="form-control"></td>
     </tr>
     <tr>
-      <td><input type="text" name="question[]" value="HR" class="form-control" readonly></td>
+      <td><input type="text" name="question[]" value="HR" class="form-control" readonly>
+        <input type="text" name="rec" value="<?php echo($rec)?>" class="form-control" readonly style="display: none;"></td>
       <td><input type="number" name="answer[]" placeholder="Enter patient value" min="39" max="100" class="form-control"></td>
     </tr>
     <tr>
@@ -188,22 +191,22 @@ $nhis = $_SESSION['nhis'];
       <th></th>
       <th>Value</th>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Range of Motion" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Muscle tone" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Power of Muscle" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="sensation" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
@@ -230,22 +233,22 @@ $nhis = $_SESSION['nhis'];
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
 
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Range of Motion" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Muscle tone" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Power of Muscle" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
-    <tr>
+    <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="sensation" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
@@ -291,70 +294,7 @@ $nhis = $_SESSION['nhis'];
 </div>
 <!-- pyhsioteraphy box ended -->
 </div>
-<?php
-include('include/db.php');
-session_start();
-ob_start();
 
-$sel = "SELECT * FROM asp2 ORDER BY id asc ";
-$query = $conn->query($sel);
-while ($res = $query-> fetch_assoc()) {
-  $idtwo = $res[idtwo];
-  $_SESSION['idtwo']=$idtwo;
-}
-
-if (isset($_POST['continue'])) {
-  $alert = $_POST['alert'];
-  $resp = $_POST['resp'];
-  $cognition = $_POST['cognition'];
-  $neglect = $_POST['neglect'];
-  $comm = $_POST['comm'];
-  $swallow = $_POST['swallow'];
-  $pain = $_POST['pain'];
-  $mobility = $_POST['bedmobility'];
-  $nhis = $_POST['nhis'];
-
-  $idtwo = $_SESSION['idtwo'];
-  $_SESSION['nhis'] = $nhis;
-
-  $ins = "INSERT INTO asp (idtwo,alert,respiratory,cognition,neglect,communication, swallow,pain,bedmobility,nhis) VALUES ('$idtwo','$alert','$resp','$cognition','$neglect','$comm','$swallow','$pain','$mobility','$nhis')";
-  $result = $conn->query($ins);
-
-  extract($_POST);
-  $c = 4;
-  for($a = 0; $a < $c; $a++)
-  { 
-    $ins = "INSERT INTO fmcphy2.aspques VALUES(NULL,'".$question[$a]."','".$answer[$a]."','$nhis','$idtwo')";
-    $res = $conn->query($ins);
-  }
-
-  extract($_POST);
-  $c = 16;
-  for($a = 0; $a < $c; $a++)
-  { 
-    $ins = "INSERT INTO fmcphy2.aspques2 VALUES(NULL,'".$tp[$a]."','".$issue[$a]."','".$ans[$a]."','$nhis','$idtwo')";
-    $res = $conn->query($ins);
-  }
-
-  if ($result === TRUE) {
-    echo "<script>
-    alert('record submited successfully');
-    </script>";
-    $_SESSION['idtwo'] = $idtwo;
-    header('refresh:0;assprotocol4.php');
-  }else{
-   echo "<script>
-   alert:('unable to submit');
-   </script>";
-   echo  $conn->error;
-
-                    // header('refresh:0;assprotocol2.php');
-
- } echo  $conn->error;
-}
-
-
-?>
 <!-- end wrapper -->
 
 <!-- Core Scripts - Include with every page -->

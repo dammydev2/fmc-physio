@@ -6,7 +6,7 @@ session_start();
 //error_reporting(E_ALL);
 $servername = "localhost";
 $username = "root";
-$password = "damilola92";
+$password = "";
 $db = "fmcphy_gen";
 
 // Create connection

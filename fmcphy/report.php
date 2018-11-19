@@ -5,7 +5,7 @@ $type = $_SESSION['ttype'];
 $date = $_SESSION['date'];
 if (isset($_POST['nh'])) {
     $NHIS = $_POST['num'];
-    $sel2 = "SELECT * FROM patient WHERE patientnum='$NHIS' ";
+    $sel2 = "SELECT * FROM asp4 WHERE idtwo='$NHIS' ";
     $res2 = $conn->query($sel2);
     if ($res2->num_rows < 1) {
       $err = "<dt style='color: red;'>No Record Found</dt>";
@@ -18,9 +18,9 @@ if (isset($_POST['nh'])) {
 }
 
 if (isset($_POST['submit'])) {
-    $_SESSION['patientnum'] = $_POST['num'];
+    $_SESSION['idtwo'] = $_POST['num'];
     $_SESSION['rec'] = $_POST['rec_num'];
-    header("Location: receipt.php");
+    header("Location: print.php");
    }
 ?>
 
@@ -103,7 +103,7 @@ if (isset($_POST['submit'])) {
                     <label class="control-label">Receipt Num</label>
                     <div class="controls">
                       <?php 
-                                    $query = ("SELECT * FROM receipt_num WHERE num='$NHIS' ORDER BY rec DESC"); // Run your query
+                                    $query = ("SELECT * FROM asp4 WHERE idtwo='$NHIS' ORDER BY rec DESC"); // Run your query
                     echo '<select name="rec_num">'; // Open your drop down box
                       // Loop through the query results,
                       //outputing the options one by one
@@ -111,8 +111,8 @@ if (isset($_POST['submit'])) {
                     $drg = $conn->query($query);
                     while ($row = $drg->fetch_array()) {
                       echo '<option value="'.$row
-                      [2].'">'.$row
-                      [2].'</option>';
+                      [10].'">'.$row
+                      [10].'</option>';
                   }
                   echo  '</select>';
                   ?>

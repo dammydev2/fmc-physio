@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 	for($a = 0; $a < $c; $a++)
 	{ 
 		$complain[$a];
-		$ins = "INSERT INTO fmcphy.growth_1 VALUES(NULL,'$num2','".$describe[$a]."','$physio','$info','$rec')";
+		$ins = "INSERT INTO fmcphy_ped.growth_1 VALUES(NULL,'$num2','".$describe[$a]."','$physio','$info','$rec')";
 		$res = $conn->query($ins);
 		/**
 		if ($res === TRUE) {
@@ -30,13 +30,16 @@ if (isset($_POST['submit'])) {
 	for($a = 0; $a < $c; $a++)
 	{ 
 		$complain[$a];
-		$ins = "INSERT INTO fmcphy.growth_2 VALUES(NULL,'$num2','".$question[$a]."','".$answer[$a]."','$physio','$info','$rec')";
+		$ins = "INSERT INTO fmcphy_ped.growth_2 VALUES(NULL,'$num2','".$question[$a]."','".$answer[$a]."','$physio','$info','$rec')";
 		$res2 = $conn->query($ins);
 	}
 	if ($res === TRUE AND $res2 === TRUE) {
 		?>
 		<meta http-equiv="refresh" content="0; URL=http:previous.php">
 		<?php
+	}
+	else{
+		echo $conn->query_error;
 	}
 }
 ?>
@@ -230,7 +233,7 @@ if (isset($_POST['submit'])) {
 									</div>
 									<div class="form-group">
 										<label for="exampleInputEmail1">Physiotherapist (Name)</label>
-										<input type="text" name="physio" required class="form-control" id="exampleInputEmail1" />
+										<input type="text" value="<?php echo($_SESSION['user']); ?>" readonly name="physio" required class="form-control" id="exampleInputEmail1" />
 										<input type="text" name="rec" value="<?php echo($rec); ?>" required class="form-control" id="exampleInputEmail1" style="display: none;" />
 									</div>
 									<p>&nbsp;</p>

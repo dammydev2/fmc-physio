@@ -57,7 +57,7 @@ while ($row = $res->fetch_array()) {
         <!-- end navbar-header -->
 
         <!-- navbar side -->
-        <?php include('includes/navbar.php'); ?>
+        <?php include('includes/nav2.php'); ?>
         <!-- end navbar side -->
 
         <!--  page-wrapper -->
@@ -91,7 +91,7 @@ while ($row = $res->fetch_array()) {
                 <!-- form --> 
                 <div class="panel-body">
                     <form method="POST" class="col-lg-6">
-                        Physiotheraphyst: <input type="text" name="name" class="form-control" value="<?php echo $name;?>" readonly><br />
+                        Physiotheraphyst: <input type="text" name="name" class="form-control" value="<?php echo $_SESSION['user'];?>" readonly><br />
                          Patient ID: <input type="text" name="num" class="form-control" value="<?php echo $num;?>" readonly><br />
                          Diagnosis: <input type="text" name="diag" class="form-control" ><br />
                         Analysis of Condition:<textarea class="form-control" name="Analysis" placeholder="Analysis of Condition" rows="12" required></textarea>

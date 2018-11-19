@@ -30,7 +30,7 @@
         <!-- end navbar-header -->
 
         <!-- navbar side -->
-        <?php include('includes/navbar.php'); ?>
+        <?php include('includes/nav2.php'); ?>
         <!-- end navbar side -->
 
         <!--  page-wrapper -->
@@ -49,6 +49,7 @@
             session_start();
             ob_start();
             $nhis = $_SESSION['nhis'];
+            $rec = $_SESSION['rec'];
 
             if (isset($_POST['reg'])) {
                $hcp = $_POST['hcp'];
@@ -68,9 +69,9 @@
                 $rel_info = $_POST['rel_info'];
                $idtwo = $_SESSION['idtwo'];
                $nhis = $_POST['nhis'];
-
+extract($_POST);
                 
-                $ins = "INSERT INTO asp2 (idtwo,hcp,pmh,dh,sh,habit,accomodation,stairs,handrails,wc,no_of_child,no_of_pregnancy,wives,mobility,aids,rel_info,nhis) VALUES ('$idtwo','$hcp','$pmh','$dh','$sh','$habit','$accomodation','$stairs','$handrails','$wc','$child','$pregnancy','$wives','$mobility','$aids','$rel_info','$nhis')";
+                $ins = "INSERT INTO asp2 (idtwo,hcp,pmh,dh,sh,habit,accomodation,stairs,handrails,wc,no_of_child,no_of_pregnancy,wives,mobility,aids,rel_info,nhis,rec) VALUES ('$idtwo','$hcp','$pmh','$dh','$sh','$habit','$accomodation','$stairs','$handrails','$wc','$child','$pregnancy','$wives','$mobility','$aids','$rel_info','$nhis','$rec')";
                 $result = $conn->query($ins);
 
                if ($result === TRUE) {
@@ -79,6 +80,7 @@
                     </script>";
                      $_SESSION['idtwo'] = $idtwo;
                      $_SESSION['nhis'] = $nhis;
+                     $_SESSION['rec'] = $rec;
                      header('refresh:0;assprotocol1.php');
                 }else{
                      echo "<script>
@@ -129,6 +131,7 @@
                             <div class="input-group w3_w3layouts col-lg-12">
                                 <span class="input-group-addon" id="basic-addon1">DH</span>
                                 <input type="text" name="dh" class="form-control" placeholder="dh" aria-describedby="basic-addon1" required="" / >
+                                <input type="text" name="rec" value="<?php echo($rec);?>" class="form-control" placeholder="dh" aria-describedby="basic-addon1" required="" style="display: none;" / >
                             </div>
                         </div>
                     </div>
@@ -174,7 +177,7 @@
                     <div class="col-lg-6 mult  ">
                         <div class="form-group ">
                     <div class="form-check ">
-                     <label class="form-check-label" for="exampleRadios1">Stiars ?</label>&nbsp;&nbsp;
+                     <label class="form-check-label" for="exampleRadios1">Stairs ?</label>&nbsp;&nbsp;
                     <input class="form-check-input" type="radio" name="Stiars" id="exampleRadios1" value="yes" checked>
                      <label class="form-check-label" for="exampleRadios1">Yes</label>&nbsp;
                      <input class="form-check-input" type="radio" name="Stiars" id="exampleRadios1" value="no" checked>
@@ -214,7 +217,7 @@
                     <div class="col-lg-6 ">
                         <div class="form-group">
                             <div class="input-group w3_w3layouts col-lg-12">
-                                <span class="input-group-addon" id="basic-addon1">MUNBER OF PREGNANCY</span>
+                                <span class="input-group-addon" id="basic-addon1">NUMBER OF PREGNANCY</span>
                                 <input type="num" name="pregnancy" class="form-control" placeholder="number of pregnancy" aria-describedby="basic-addon1" required="" / >
                             </div>
                         </div>
@@ -222,7 +225,7 @@
                      <div class="col-lg-6 ">
                         <div class="form-group">
                             <div class="input-group w3_w3layouts col-lg-12">
-                                <span class="input-group-addon" id="basic-addon1">MUNBER OF WIVES</span>
+                                <span class="input-group-addon" id="basic-addon1">NUMBER OF WIVES</span>
                                 <input type="num" name="wives" class="form-control" placeholder="number of wives" aria-describedby="basic-addon1" required="" / >
                             </div>
                         </div>

@@ -1,26 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Nov 07, 2018 at 02:17 PM
--- Server version: 5.7.23
--- PHP Version: 7.2.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `fmcphy_occp`
---
 
 -- --------------------------------------------------------
 
@@ -101,7 +79,27 @@ INSERT INTO `activity` (`id`, `num`, `rec`, `issue`, `answer`, `comment`) VALUES
 (57, 'PRED_10', '1000012', 'Toileting skills', 'Mod Asst', ''),
 (58, 'PRED_10', '1000012', 'Functional mobility', 'Dependent', ''),
 (59, 'PRED_10', '1000012', 'Personal device Care', 'Dependent', ''),
-(60, 'PRED_10', '1000012', 'Other', '', '');
+(60, 'PRED_10', '1000012', 'Other', '', ''),
+(61, 'PRED_16', '1000015', 'Self-feeding', 'Dependent', ''),
+(62, 'PRED_16', '1000015', 'Hygiene/grooming', 'Dependent', ''),
+(63, 'PRED_16', '1000015', 'Upper body(UB) bathing', 'Dependent', ''),
+(64, 'PRED_16', '1000015', 'Upper Body dressing', 'Dependent', ''),
+(65, 'PRED_16', '1000015', 'Bathing/shower', 'Dependent', ''),
+(66, 'PRED_16', '1000015', 'Toilet transfer', 'Dependent', ''),
+(67, 'PRED_16', '1000015', 'Toileting skills', 'Dependent', ''),
+(68, 'PRED_16', '1000015', 'Functional mobility', 'Dependent', ''),
+(69, 'PRED_16', '1000015', 'Personal device Care', 'Dependent', ''),
+(70, 'PRED_16', '1000015', 'Other', '', ''),
+(71, 'PRED_16', '1000016', 'Self-feeding', 'Dependent', ''),
+(72, 'PRED_16', '1000016', 'Hygiene/grooming', 'Dependent', ''),
+(73, 'PRED_16', '1000016', 'Upper body(UB) bathing', 'Dependent', ''),
+(74, 'PRED_16', '1000016', 'Upper Body dressing', 'Dependent', ''),
+(75, 'PRED_16', '1000016', 'Bathing/shower', 'Dependent', ''),
+(76, 'PRED_16', '1000016', 'Toilet transfer', 'Dependent', ''),
+(77, 'PRED_16', '1000016', 'Toileting skills', 'Dependent', ''),
+(78, 'PRED_16', '1000016', 'Functional mobility', 'Dependent', ''),
+(79, 'PRED_16', '1000016', 'Personal device Care', 'Dependent', ''),
+(80, 'PRED_16', '1000016', 'Other', '', '');
 
 -- --------------------------------------------------------
 
@@ -192,7 +190,27 @@ INSERT INTO `ADL` (`id`, `num`, `rec`, `issue`, `answer`, `comment`) VALUES
 (67, 'PRED_10', '1000012', 'Financial mgmt', 'Dependent', ''),
 (68, 'PRED_10', '1000012', 'Care of others', 'Dependent', 'ewad'),
 (69, 'PRED_10', '1000012', 'Religious observance', 'Mod Asst', 'eff'),
-(70, 'PRED_10', '1000012', 'Other', '', 'wrgf');
+(70, 'PRED_10', '1000012', 'Other', '', 'wrgf'),
+(71, 'PRED_16', '1000015', 'Kitchen survival skills', 'Dependent', ''),
+(72, 'PRED_16', '1000015', 'Meal preparation', 'Dependent', ''),
+(73, 'PRED_16', '1000015', 'Shopping', 'Dependent', ''),
+(74, 'PRED_16', '1000015', 'Laundry', 'Dependent', ''),
+(75, 'PRED_16', '1000015', 'Light housekeeping', 'Dependent', ''),
+(76, 'PRED_16', '1000015', 'Community mobility', 'Dependent', ''),
+(77, 'PRED_16', '1000015', 'Financial mgmt', 'Dependent', ''),
+(78, 'PRED_16', '1000015', 'Care of others', 'Dependent', ''),
+(79, 'PRED_16', '1000015', 'Religious observance', 'Dependent', ''),
+(80, 'PRED_16', '1000015', 'Other', '', ''),
+(81, 'PRED_16', '1000016', 'Kitchen survival skills', 'Dependent', ''),
+(82, 'PRED_16', '1000016', 'Meal preparation', 'Dependent', ''),
+(83, 'PRED_16', '1000016', 'Shopping', 'Dependent', ''),
+(84, 'PRED_16', '1000016', 'Laundry', 'Dependent', ''),
+(85, 'PRED_16', '1000016', 'Light housekeeping', 'Dependent', ''),
+(86, 'PRED_16', '1000016', 'Community mobility', 'Dependent', ''),
+(87, 'PRED_16', '1000016', 'Financial mgmt', 'Dependent', ''),
+(88, 'PRED_16', '1000016', 'Care of others', 'Dependent', ''),
+(89, 'PRED_16', '1000016', 'Religious observance', 'Dependent', ''),
+(90, 'PRED_16', '1000016', 'Other', '', '');
 
 -- --------------------------------------------------------
 
@@ -223,7 +241,9 @@ INSERT INTO `assesment` (`id`, `name`, `DOB`, `num`, `rec`, `treatment`, `histor
 (3, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000007', '2018-11-11', 'Past medical surgical hx', 'medications goes here', '2018-11-03', 'occupational profile'),
 (4, 'Sofine Fegolli', '2018-10-06', 'PRED_11', '1000008', '2018-11-08', 'lkiolk', 'asder', '2018-11-22', 'mkiol'),
 (5, 'Sofine Fegolli', '2018-10-06', 'PRED_11', '1000011', '2018-11-09', 'jknj', 'jjj', '2018-11-16', 'njk'),
-(6, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000012', '2018-11-09', 'wdas', 'medications goes here', '2018-11-15', 'occupational profile');
+(6, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000012', '2018-11-09', 'wdas', 'medications goes here', '2018-11-15', 'occupational profile'),
+(7, 'Riyah Ololade', '1212-12-12', 'PRED_16', '1000015', '2018-11-09', 'gh', 'medications goes here', '2018-11-10', 'gfeg'),
+(8, 'Riyah Ololade', '1212-12-12', 'PRED_16', '1000016', '2018-11-09', 'fds', 'efd', '2018-11-08', 'sda');
 
 -- --------------------------------------------------------
 
@@ -360,7 +380,53 @@ INSERT INTO `functional` (`id`, `num`, `rec`, `issue`, `answer`, `comment`, `tp`
 (112, 'PRED_10', '1000012', 'RUE', 'Poor', '', 'Fine coordination'),
 (113, 'PRED_10', '1000012', 'LUE', 'Fair', '', 'Selective muscle movement and control'),
 (114, 'PRED_10', '1000012', 'Coordination/bilateral integration', 'Poor', '', 'Selective muscle movement and control'),
-(115, 'PRED_10', '1000012', 'LE Function', 'Poor', '', 'Selective muscle movement and control');
+(115, 'PRED_10', '1000012', 'LE Function', 'Poor', '', 'Selective muscle movement and control'),
+(116, 'PRED_16', '1000015', '(b) Emotional regulation (behavior, coping, etc)', 'impared', '', 'Functional Cognition'),
+(117, 'PRED_16', '1000015', 'Short term Memory', 'impared', '', 'Functional Cognition'),
+(118, 'PRED_16', '1000015', 'Long term Memory', 'impared', '', 'Visual motor/perception'),
+(119, 'PRED_16', '1000015', 'Attention', 'impared', '', 'Memory'),
+(120, 'PRED_16', '1000015', 'Problem Solving', 'impared', '', 'Memory'),
+(121, 'PRED_16', '1000015', 'Safety awareness', 'impared', '', 'Memory'),
+(122, 'PRED_16', '1000015', 'Vision/hearing', 'impared', '', 'Memory'),
+(123, 'PRED_16', '1000015', 'Speech', 'impared', '', 'Memory'),
+(124, 'PRED_16', '1000015', 'Speech', '0', '', 'Memory'),
+(125, 'PRED_16', '1000015', 'RUE', 'full', '', 'Memory'),
+(126, 'PRED_16', '1000015', 'LUE', 'impared', '', 'Range of motion'),
+(127, 'PRED_16', '1000015', 'RUE', '1', '', 'Range of motion'),
+(128, 'PRED_16', '1000015', 'LUE', '1', '', 'Strength'),
+(129, 'PRED_16', '1000015', 'RUE', 'intact', '', 'Strength'),
+(130, 'PRED_16', '1000015', 'LUE', 'intact', '', 'Sensation'),
+(131, 'PRED_16', '1000015', 'RUE', 'normal', '', 'Sensation'),
+(132, 'PRED_16', '1000015', 'LUE', 'normal', '', 'Muscle Tone'),
+(133, 'PRED_16', '1000015', 'RUE', 'Poor', '', 'Muscle Tone'),
+(134, 'PRED_16', '1000015', 'LUE', 'Poor', '', 'Fine coordination'),
+(135, 'PRED_16', '1000015', 'RUE', 'Poor', '', 'Fine coordination'),
+(136, 'PRED_16', '1000015', 'LUE', 'Poor', '', 'Selective muscle movement and control'),
+(137, 'PRED_16', '1000015', 'Coordination/bilateral integration', 'Poor', '', 'Selective muscle movement and control'),
+(138, 'PRED_16', '1000015', 'LE Function', 'Poor', '', 'Selective muscle movement and control'),
+(139, 'PRED_16', '1000016', '(b) Emotional regulation (behavior, coping, etc)', 'impared', '', 'Functional Cognition'),
+(140, 'PRED_16', '1000016', 'Short term Memory', 'impared', '', 'Functional Cognition'),
+(141, 'PRED_16', '1000016', 'Long term Memory', 'impared', '', 'Visual motor/perception'),
+(142, 'PRED_16', '1000016', 'Attention', 'impared', '', 'Memory'),
+(143, 'PRED_16', '1000016', 'Problem Solving', 'impared', '', 'Memory'),
+(144, 'PRED_16', '1000016', 'Safety awareness', 'impared', '', 'Memory'),
+(145, 'PRED_16', '1000016', 'Vision/hearing', 'impared', '', 'Memory'),
+(146, 'PRED_16', '1000016', 'Speech', 'impared', '', 'Memory'),
+(147, 'PRED_16', '1000016', 'Speech', '0', '', 'Memory'),
+(148, 'PRED_16', '1000016', 'RUE', 'full', '', 'Memory'),
+(149, 'PRED_16', '1000016', 'LUE', 'impared', '', 'Range of motion'),
+(150, 'PRED_16', '1000016', 'RUE', '1', '', 'Range of motion'),
+(151, 'PRED_16', '1000016', 'LUE', '1', '', 'Strength'),
+(152, 'PRED_16', '1000016', 'RUE', 'intact', '', 'Strength'),
+(153, 'PRED_16', '1000016', 'LUE', 'intact', '', 'Sensation'),
+(154, 'PRED_16', '1000016', 'RUE', 'normal', '', 'Sensation'),
+(155, 'PRED_16', '1000016', 'LUE', 'normal', '', 'Muscle Tone'),
+(156, 'PRED_16', '1000016', 'RUE', 'Poor', '', 'Muscle Tone'),
+(157, 'PRED_16', '1000016', 'LUE', 'Poor', '', 'Fine coordination'),
+(158, 'PRED_16', '1000016', 'RUE', 'Poor', '', 'Fine coordination'),
+(159, 'PRED_16', '1000016', 'LUE', 'Poor', '', 'Selective muscle movement and control'),
+(160, 'PRED_16', '1000016', 'Coordination/bilateral integration', 'Poor', '', 'Selective muscle movement and control'),
+(161, 'PRED_16', '1000016', 'LE Function', 'Poor', '', 'Selective muscle movement and control');
 
 -- --------------------------------------------------------
 
@@ -405,7 +471,15 @@ INSERT INTO `leisure` (`id`, `num`, `rec`, `issue`, `answer`, `comment`) VALUES
 (21, 'PRED_10', '1000012', 'Education (formal and informal)', 'not impared', ''),
 (22, 'PRED_10', '1000012', 'Work Employment/Volunteer', 'not impared', 'rgfr'),
 (23, 'PRED_10', '1000012', 'Leisure participation', 'impared', 'rgfw'),
-(24, 'PRED_10', '1000012', 'Social participation', 'not impared', '');
+(24, 'PRED_10', '1000012', 'Social participation', 'not impared', ''),
+(25, 'PRED_16', '1000015', 'Education (formal and informal)', 'impared', ''),
+(26, 'PRED_16', '1000015', 'Work Employment/Volunteer', 'impared', ''),
+(27, 'PRED_16', '1000015', 'Leisure participation', 'impared', ''),
+(28, 'PRED_16', '1000015', 'Social participation', 'impared', ''),
+(29, 'PRED_16', '1000016', 'Education (formal and informal)', 'impared', ''),
+(30, 'PRED_16', '1000016', 'Work Employment/Volunteer', 'impared', ''),
+(31, 'PRED_16', '1000016', 'Leisure participation', 'impared', ''),
+(32, 'PRED_16', '1000016', 'Social participation', 'impared', '');
 
 -- --------------------------------------------------------
 
@@ -439,7 +513,10 @@ INSERT INTO `mental` (`id`, `name`, `DOB`, `num`, `rec`, `Gender`, `Code`, `Ethn
 (2, '', '', '', '', '', 'ewjnkf', '', 'rfg', 'fwce', 'Occupational Therapist', '2018-11-30', '2018-11-16', 'uhgij'),
 (3, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000010', 'Male', '009', '', 'Migrane', 'Ade Wale', 'Occupational Therapist', '2018-11-17', '2018-11-18', 'dss'),
 (4, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000013', 'Male', '009', '', 'Migrane', 'Ade Wale', 'OOT Support staff', '2018-11-03', '2018-11-11', 'setting'),
-(5, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000014', 'Male', '009', 'Isoko', 'Migrane', 'Ade Wale', 'Occupational Therapist', '2018-11-18', '2018-11-10', 'setting');
+(5, 'Yakubu Damilola', '2018-10-14', 'PRED_10', '1000014', 'Male', '009', 'Isoko', 'Migrane', 'Ade Wale', 'Occupational Therapist', '2018-11-18', '2018-11-10', 'setting'),
+(6, 'Riyah Ololade', '1212-12-12', 'PRED_16', '1000017', 'Male', '009', 'Isoko', 'Migrane', 'Ade Wale', 'Occupational Therapist', '2018-11-23', '2018-11-10', 'fvrs'),
+(7, 'Salisu Ganiu', '2018-11-09', 'PRED_14', '1000018', '', '009', 'Isoko', 'Migrane', 'John Adewale', 'Occupational Therapist', '2018-11-17', '2018-11-11', 'das'),
+(8, 'Riyah Ololade', '1212-12-12', 'PRED_16', '1000019', 'Male', '009', '', 'Migrane', 'John Adewale', '', '2018-11-24', '2018-11-10', 'das');
 
 -- --------------------------------------------------------
 
@@ -580,7 +657,79 @@ INSERT INTO `motivation` (`id`, `num`, `rec`, `question`, `answer`, `tp`) VALUES
 (117, 'PRED_10', '1000014', 'Physical space', 'Inhibits occupational participation', 'Entertainment'),
 (118, 'PRED_10', '1000014', 'Physical Resources', 'Allows occupational participation', 'Entertainment'),
 (119, 'PRED_10', '1000014', 'Social groups', 'Inhibits occupational participation', 'Entertainment'),
-(120, 'PRED_10', '1000014', 'Operational Demands', 'Inhibits occupational participation', 'Entertainment');
+(120, 'PRED_10', '1000014', 'Operational Demands', 'Inhibits occupational participation', 'Entertainment'),
+(121, 'PRED_16', '1000017', 'Shows awareness of strengths & limitations', 'Not seen', 'motivation'),
+(122, 'PRED_16', '1000017', 'Shows pride/seeks challenges', 'Not seen', 'motivation'),
+(123, 'PRED_16', '1000017', 'Shows curiosity and demonstrates interest', 'Not seen', 'motivation'),
+(124, 'PRED_16', '1000017', 'Identiï¬es preferences/is goal-oriented', 'Not seen', 'motivation'),
+(125, 'PRED_16', '1000017', 'Maintains routine habits (ADL)', 'Not seen', 'Pattern'),
+(126, 'PRED_16', '1000017', 'Remains settled/copes with disruption/change', 'Not seen', 'Pattern'),
+(127, 'PRED_16', '1000017', 'Becomes actively involved with task/group', 'Not seen', 'Pattern'),
+(128, 'PRED_16', '1000017', 'Fulfills responsibilities in the session', 'Not seen', 'Pattern'),
+(129, 'PRED_16', '1000017', 'Uses appropriate non-verbal expression', 'Not seen', 'Comm'),
+(130, 'PRED_16', '1000017', 'Initiates and sustains appropriate conversation', 'Not seen', 'Comm'),
+(131, 'PRED_16', '1000017', 'Uses appropriate vocal expression', 'Not seen', 'Comm'),
+(132, 'PRED_16', '1000017', 'Relates to and co-operates with others', 'Not seen', 'Comm'),
+(133, 'PRED_16', '1000017', 'Chooses/uses equipment appropriately', 'Not seen', 'Process'),
+(134, 'PRED_16', '1000017', 'Maintains focus throughout task/sequence', 'Not seen', 'Process'),
+(135, 'PRED_16', '1000017', 'Works in an orderly fashion', 'Not seen', 'Process'),
+(136, 'PRED_16', '1000017', 'Modiï¬es actions to overcome problems', 'Not seen', 'Process'),
+(137, 'PRED_16', '1000017', 'Mobilises independently', 'Not seen', 'Motor'),
+(138, 'PRED_16', '1000017', 'Manipulates tools and materials easily', 'Not seen', 'Motor'),
+(139, 'PRED_16', '1000017', 'Uses appropriate strength and effort', 'Not seen', 'Motor'),
+(140, 'PRED_16', '1000017', 'Maintains energy and appropriate pace', 'Not seen', 'Motor'),
+(141, 'PRED_16', '1000017', 'Space offers stimulus and comfort', 'Not seen', 'Entertainment'),
+(142, 'PRED_16', '1000017', 'Resources allow safety and independence', 'Not seen', 'Entertainment'),
+(143, 'PRED_16', '1000017', 'Social interaction provides support', 'Not seen', 'Entertainment'),
+(144, 'PRED_16', '1000017', 'Demands of activity match abilities/interests', 'Not seen', 'Entertainment'),
+(145, 'PRED_14', '1000018', 'Shows awareness of strengths & limitations', 'Not seen', 'motivation'),
+(146, 'PRED_14', '1000018', 'Shows pride/seeks challenges', 'Not seen', 'motivation'),
+(147, 'PRED_14', '1000018', 'Shows curiosity and demonstrates interest', 'Not seen', 'motivation'),
+(148, 'PRED_14', '1000018', 'Identiï¬es preferences/is goal-oriented', 'Not seen', 'motivation'),
+(149, 'PRED_14', '1000018', 'Maintains routine habits (ADL)', 'Not seen', 'Pattern'),
+(150, 'PRED_14', '1000018', 'Remains settled/copes with disruption/change', 'Not seen', 'Pattern'),
+(151, 'PRED_14', '1000018', 'Becomes actively involved with task/group', 'Not seen', 'Pattern'),
+(152, 'PRED_14', '1000018', 'Fulfills responsibilities in the session', 'Not seen', 'Pattern'),
+(153, 'PRED_14', '1000018', 'Uses appropriate non-verbal expression', 'Not seen', 'Comm'),
+(154, 'PRED_14', '1000018', 'Initiates and sustains appropriate conversation', 'Not seen', 'Comm'),
+(155, 'PRED_14', '1000018', 'Uses appropriate vocal expression', 'Not seen', 'Comm'),
+(156, 'PRED_14', '1000018', 'Relates to and co-operates with others', 'Not seen', 'Comm'),
+(157, 'PRED_14', '1000018', 'Chooses/uses equipment appropriately', 'Not seen', 'Process'),
+(158, 'PRED_14', '1000018', 'Maintains focus throughout task/sequence', 'Not seen', 'Process'),
+(159, 'PRED_14', '1000018', 'Works in an orderly fashion', 'Not seen', 'Process'),
+(160, 'PRED_14', '1000018', 'Modiï¬es actions to overcome problems', 'Not seen', 'Process'),
+(161, 'PRED_14', '1000018', 'Mobilises independently', 'Not seen', 'Motor'),
+(162, 'PRED_14', '1000018', 'Manipulates tools and materials easily', 'Not seen', 'Motor'),
+(163, 'PRED_14', '1000018', 'Uses appropriate strength and effort', 'Not seen', 'Motor'),
+(164, 'PRED_14', '1000018', 'Maintains energy and appropriate pace', 'Not seen', 'Motor'),
+(165, 'PRED_14', '1000018', 'Space offers stimulus and comfort', 'Not seen', 'Entertainment'),
+(166, 'PRED_14', '1000018', 'Resources allow safety and independence', 'Not seen', 'Entertainment'),
+(167, 'PRED_14', '1000018', 'Social interaction provides support', 'Not seen', 'Entertainment'),
+(168, 'PRED_14', '1000018', 'Demands of activity match abilities/interests', 'Not seen', 'Entertainment'),
+(169, 'PRED_16', '1000019', 'Apprisal of ability', 'Facilitates occupational participation', 'motivation'),
+(170, 'PRED_16', '1000019', 'Expectation of success', 'Facilitates occupational participation', 'motivation'),
+(171, 'PRED_16', '1000019', 'interest', 'Facilitates occupational participation', 'motivation'),
+(172, 'PRED_16', '1000019', 'Choices', 'Facilitates occupational participation', 'motivation'),
+(173, 'PRED_16', '1000019', 'Routine', 'Facilitates occupational participation', 'Pattern'),
+(174, 'PRED_16', '1000019', 'Adaptability', 'Facilitates occupational participation', 'Pattern'),
+(175, 'PRED_16', '1000019', 'Roles', 'Facilitates occupational participation', 'Pattern'),
+(176, 'PRED_16', '1000019', 'Responsibility', 'Facilitates occupational participation', 'Pattern'),
+(177, 'PRED_16', '1000019', 'Non verbal skills', 'Facilitates occupational participation', 'Comm'),
+(178, 'PRED_16', '1000019', 'conversation', 'Facilitates occupational participation', 'Comm'),
+(179, 'PRED_16', '1000019', 'vocal expression', 'Facilitates occupational participation', 'Comm'),
+(180, 'PRED_16', '1000019', 'Relationships', 'Facilitates occupational participation', 'Comm'),
+(181, 'PRED_16', '1000019', 'Knowledge', 'Facilitates occupational participation', 'Process'),
+(182, 'PRED_16', '1000019', 'Timing', 'Facilitates occupational participation', 'Process'),
+(183, 'PRED_16', '1000019', 'Organization', 'Facilitates occupational participation', 'Process'),
+(184, 'PRED_16', '1000019', 'Problem solving', 'Facilitates occupational participation', 'Process'),
+(185, 'PRED_16', '1000019', 'Posture and Mobilty', 'Facilitates occupational participation', 'Motor'),
+(186, 'PRED_16', '1000019', 'Cordination', 'Facilitates occupational participation', 'Motor'),
+(187, 'PRED_16', '1000019', 'strength and effort', 'Facilitates occupational participation', 'Motor'),
+(188, 'PRED_16', '1000019', 'Energy', 'Facilitates occupational participation', 'Motor'),
+(189, 'PRED_16', '1000019', 'Physical space', 'Facilitates occupational participation', 'Entertainment'),
+(190, 'PRED_16', '1000019', 'Physical Resources', 'Facilitates occupational participation', 'Entertainment'),
+(191, 'PRED_16', '1000019', 'Social groups', 'Facilitates occupational participation', 'Entertainment'),
+(192, 'PRED_16', '1000019', 'Operational Demands', 'Facilitates occupational participation', 'Entertainment');
 
 -- --------------------------------------------------------
 
@@ -604,7 +753,10 @@ INSERT INTO `nxt` (`id`, `num`, `rec`, `assessment`, `occupation`) VALUES
 (1, 'PRED_10', '1000009', 'Environment analysis', 'Occupation being assessed'),
 (4, 'PRED_10', '1000010', 'Environment analysis', 'Occupation being assessed'),
 (5, 'PRED_10', '1000013', 'Environment analysis', 'Occupation being assessed'),
-(6, 'PRED_10', '1000014', 'Environment analysis', 'Occupation being assessed');
+(6, 'PRED_10', '1000014', 'Environment analysis', 'Occupation being assessed'),
+(7, 'PRED_16', '1000017', 'Environment analysis', 'Occupation being assessed'),
+(8, 'PRED_14', '1000018', 'Environment analysis', 'Occupation being assessed'),
+(9, 'PRED_16', '1000019', 'Environment analysis', 'Occupation being assessed');
 
 -- --------------------------------------------------------
 
@@ -635,7 +787,9 @@ INSERT INTO `patient` (`id`, `num`, `rec`, `patient`, `comment`, `analysis`, `sh
 (2, 'PRED_10', '1000006', 'family goals', 'the comment', 'jjj', 'short goals', 'long goals', 'OT', 'duration', ''),
 (3, 'PRED_10', '1000007', 'family goals', 'comment goes here', 'analysis of occupational performance', 'shorth term goals', 'long term goals', 'OT intervention', 'frequency of duration ', 'Ganiyu Kareem'),
 (4, 'PRED_11', '1000008', 'remjv', 'fadvea', 'erevwe', 'eferqomo', 'kjn jkef', 'jiadu', 'sdkj', 'Sanni Saliu'),
-(5, 'PRED_10', '1000012', 'family goals', 'comments', 'analysis of occupational performance', 'short term goals', 'long term goals', 'rr', 'ee', 'Damilola');
+(5, 'PRED_10', '1000012', 'family goals', 'comments', 'analysis of occupational performance', 'short term goals', 'long term goals', 'rr', 'ee', 'Damilola'),
+(6, 'PRED_16', '1000015', 'family goals', 'dsv e', 'bgbfd', 'fgfds ', 'sdfsd', 'sdfsd', 'sfgs', 'John Adewale'),
+(7, 'PRED_16', '1000016', 'family goals', 'gfsd', 'sdf', 'sdf', 'sfc', 'sdf', 'sdf', 'John Adewale');
 
 -- --------------------------------------------------------
 
@@ -702,7 +856,19 @@ INSERT INTO `performance` (`id`, `num`, `rec`, `issue`, `answer`, `comment`, `tp
 (27, 'PRED_10', '1000012', 'Sit', 'impared', '', 'Balance static'),
 (28, 'PRED_10', '1000012', 'Sit', 'impared', '', 'Balance dynamic'),
 (29, 'PRED_10', '1000012', 'Sit', 'impared', '', 'Balance dynamic'),
-(30, 'PRED_10', '1000012', 'Endurance/activity tolerance', 'normal', 'hjbj', '');
+(30, 'PRED_10', '1000012', 'Endurance/activity tolerance', 'normal', 'hjbj', ''),
+(31, 'PRED_16', '1000015', 'Sit', 'impared', '', 'Posture'),
+(32, 'PRED_16', '1000015', 'Sit', 'impared', '', 'Balance static'),
+(33, 'PRED_16', '1000015', 'Sit', 'impared', '', 'Balance static'),
+(34, 'PRED_16', '1000015', 'Sit', 'impared', '', 'Balance dynamic'),
+(35, 'PRED_16', '1000015', 'Sit', 'impared', '', 'Balance dynamic'),
+(36, 'PRED_16', '1000015', 'Endurance/activity tolerance', 'Reduced', '', ''),
+(37, 'PRED_16', '1000016', 'Sit', 'impared', '', 'Posture'),
+(38, 'PRED_16', '1000016', 'Sit', 'impared', '', 'Balance static'),
+(39, 'PRED_16', '1000016', 'Sit', 'impared', '', 'Balance static'),
+(40, 'PRED_16', '1000016', 'Sit', 'impared', '', 'Balance dynamic'),
+(41, 'PRED_16', '1000016', 'Sit', 'impared', '', 'Balance dynamic'),
+(42, 'PRED_16', '1000016', 'Endurance/activity tolerance', 'Reduced', '', '');
 
 -- --------------------------------------------------------
 
@@ -720,7 +886,7 @@ CREATE TABLE `receipt` (
 --
 
 INSERT INTO `receipt` (`id`, `rec_num`) VALUES
-(1, 1000014);
+(1, 1000019);
 
 --
 -- Indexes for dumped tables
@@ -806,55 +972,55 @@ ALTER TABLE `receipt`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `ADL`
 --
 ALTER TABLE `ADL`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `assesment`
 --
 ALTER TABLE `assesment`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `functional`
 --
 ALTER TABLE `functional`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT for table `leisure`
 --
 ALTER TABLE `leisure`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `mental`
 --
 ALTER TABLE `mental`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `motivation`
 --
 ALTER TABLE `motivation`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
 -- AUTO_INCREMENT for table `nxt`
 --
 ALTER TABLE `nxt`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pattern`
@@ -866,7 +1032,7 @@ ALTER TABLE `pattern`
 -- AUTO_INCREMENT for table `performance`
 --
 ALTER TABLE `performance`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `receipt`

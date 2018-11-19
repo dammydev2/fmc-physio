@@ -18,7 +18,7 @@ if (isset($_POST['nh'])) {
 }
 if (isset($_POST['submit'])) {
     $_SESSION['num'] = $_POST['Physio'];
-    $_SESSION['rec_num'] = $_POST['rec'];
+    $_SESSION['rec'] = $_POST['rec'];
     header("Location: print2.php");
 }
 ?>

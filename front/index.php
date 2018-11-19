@@ -1,9 +1,56 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+require_once("perpage.php");	
+	require_once("dbcontroller.php");
+	$db_handle = new DBController();
+	
+	$name = "";
+	$code = "";
+	
+	$queryCondition = "";
+	if(!empty($_POST["search"])) {
+		foreach($_POST["search"] as $k=>$v){
+			if(!empty($v)) {
+
+				$queryCases = array("name","code");
+				if(in_array($k,$queryCases)) {
+					if(!empty($queryCondition)) {
+						$queryCondition .= " AND ";
+					} else {
+						$queryCondition .= " WHERE ";
+					}
+				}
+				switch($k) {
+					case "name":
+						$name = $v;
+						$queryCondition .= "name LIKE '" . $v . "%'";
+						break;
+					case "code":
+						$code = $v;
+						$queryCondition .= "p_id LIKE '" . $v . "%'";
+						break;
+				}
+			}
+		}
+	}
+	$orderby = " ORDER BY id desc"; 
+	$sql = "SELECT * FROM reg " . $queryCondition;
+	$href = 'index.php';					
+		
+	$perPage = 3; 
+	$page = 1;
+	if(isset($_POST['page'])){
+		$page = $_POST['page'];
+	}
+	$start = ($page-1)*$perPage;
+	if($start < 0) $start = 0;
+		
+	$query =  $sql . $orderby .  " limit " . $start . "," . $perPage; 
+	$result = $db_handle->runQuery($query);
+	
+	if(!empty($result)) {
+		$result["perpage"] = showperpage($sql, $perPage, $href);
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -28,6 +75,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- lined-icons -->
 	<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 	<!-- //lined-icons -->
+	<style type="text/css">
+		th{
+			background: #000;
+		}
+	</style>
 </head> 
 <body>
 	<div class="page-container">
@@ -41,78 +93,130 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</ol>
 				<!--four-grids here-->
 				<div class="four-grids" style="height: 500px;">
+					<div class=" w3-sand" style="background: #fff; padding: 5px;">
+						<!--::::::CRUD STARTS:::::::::::::-->
+						<p>&nbsp;</p>
+						<h2><b>REGISTERED PATIENT</b></h2>
+						<div style="text-align:right;margin:20px 0px 10px;">
+							<a id="btnAddAction" href="add.php" class="btn btn-primary">Add New Patient</a>
+						</div>
+						<div id="toys-grid">      
+							<form name="frmSearch" method="post" action="index.php">
+								<div class="search-box">
+									<p><input type="text" placeholder="Name" name="search[name]" class="demoInputBox" value="<?php echo $name; ?>"	/><input type="text" placeholder="Physio Number" name="search[code]" class="demoInputBox" value="<?php echo $code; ?>"	/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="go" class="btnSearch btn btn-success" value="Search">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btnSearch btn-danger btn" value="Reset" onclick="window.location='index.php'"></p>
+								</div>
 
+								<table cellpadding="10" cellspacing="1" class="table table-bordered">
+									<thead>
+										<tr>
+											<th style="background: black; color: white;"><strong>Name</strong></th>
+											<th style="background: black; color: white;"><strong>Physio Number</strong></th>  
+											<th style="background: black; color: white;"><strong>Date of Birth</strong></th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										if(!empty($result)) {
+											foreach($result as $k=>$v) {
+												if(is_numeric($k)) {
+													?>
+													<tr style="color: #000;">
+														<td><?php echo $result[$k]["name"]; ?></td>
+														<td><?php echo $result[$k]["p_id"]; ?></td>
+														<td><?php echo $result[$k]["DOB"]; ?></td>
+														<td>
+															<a class="btnEditAction btn btn-success" href="edit.php?id=<?php echo $result[$k]["id"]; ?>">Edit</a> <a style="background: red; color: #fff;" class="btn btnDeleteAction" href="delete.php?action=delete&id=<?php echo $result[$k]["id"]; ?>">Delete</a>
+														</td>
+													</tr>
+													<?php
+												}
+											}
+										}
+										if(isset($result["perpage"])) {
+											?>
+											<tr>
+												<td colspan="6" align=right> <?php echo $result["perpage"]; ?></td>
+											</tr>
+										<?php } ?>
+										<tbody>
+										</table>
+									</form>	
+								</div>
+								<!--::::::CRUD STOP HERE::::::::-->
+							</div>
+
+						</div>
+						<!--//four-grids here-->
+						<!--photoday-section-->	
+
+
+
+						<div class="clearfix"></div>
+
+						<!--//photoday-section-->	
+						<!--w3-agileits-pane-->	
+
+						<!--//w3-agileits-pane-->	
+						<!-- script-for sticky-nav -->
+						<script>
+							$(document).ready(function() {
+								var navoffeset=$(".header-main").offset().top;
+								$(window).scroll(function(){
+									var scrollpos=$(window).scrollTop(); 
+									if(scrollpos >=navoffeset){
+										$(".header-main").addClass("fixed");
+									}else{
+										$(".header-main").removeClass("fixed");
+									}
+								});
+
+							});
+						</script>
+						<!-- /script-for sticky-nav -->
+						<!--inner block start here-->
+						<div class="inner-block">
+
+						</div>
+						<!--inner block end here-->
+						<!--copy rights start here-->
+						<?php include("include/footer.php"); ?>
+						<!--COPY rights end here-->
+					</div>
 				</div>
-				<!--//four-grids here-->
-				<!--photoday-section-->	
-
-
-				
-				<div class="clearfix"></div>
-
-				<!--//photoday-section-->	
-				<!--w3-agileits-pane-->	
-				
-				<!--//w3-agileits-pane-->	
-				<!-- script-for sticky-nav -->
-				<script>
-					$(document).ready(function() {
-						var navoffeset=$(".header-main").offset().top;
-						$(window).scroll(function(){
-							var scrollpos=$(window).scrollTop(); 
-							if(scrollpos >=navoffeset){
-								$(".header-main").addClass("fixed");
-							}else{
-								$(".header-main").removeClass("fixed");
-							}
-						});
-
-					});
-				</script>
-				<!-- /script-for sticky-nav -->
-				<!--inner block start here-->
-				<div class="inner-block">
-
-				</div>
-				<!--inner block end here-->
-				<!--copy rights start here-->
-				<?php include("include/footer.php"); ?>
-				<!--COPY rights end here-->
+				<?php include("include/sidebar.php"); ?>		
 			</div>
-		</div>
-		<?php include("include/sidebar.php"); ?>		
-	</div>
-	<script>
-		var toggle = true;
+			<script>
+				var toggle = true;
 
-		$(".sidebar-icon").click(function() {                
-			if (toggle)
-			{
-				$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-				$("#menu span").css({"position":"absolute"});
-			}
-			else
-			{
-				$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-				setTimeout(function() {
-					$("#menu span").css({"position":"relative"});
-				}, 400);
-			}
+				$(".sidebar-icon").click(function() {                
+					if (toggle)
+					{
+						$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+						$("#menu span").css({"position":"absolute"});
+					}
+					else
+					{
+						$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+						setTimeout(function() {
+							$("#menu span").css({"position":"relative"});
+						}, 400);
+					}
 
-			toggle = !toggle;
-		});
-	</script>
-	<!--js -->
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- /Bootstrap Core JavaScript -->	   
-	<!-- morris JavaScript -->	
-	<script src="js/raphael-min.js"></script>
-	<script src="js/morris.js"></script>
-	<script>
-		$(document).ready(function() {
+					toggle = !toggle;
+				});
+			</script>
+			<!--js -->
+			<script src="js/jquery.nicescroll.js"></script>
+			<script src="js/scripts.js"></script>
+			<!-- Bootstrap Core JavaScript -->
+			<script src="js/bootstrap.min.js"></script>
+			<!-- /Bootstrap Core JavaScript -->	   
+			<!-- morris JavaScript -->	
+			<script src="js/raphael-min.js"></script>
+			<script src="js/morris.js"></script>
+			<script>
+				$(document).ready(function() {
 		//BOX BUTTON SHOW AND CLOSE
 		jQuery('.small-graph-box').hover(function() {
 			jQuery(this).find('.box-button').fadeIn('fast');
