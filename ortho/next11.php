@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
   }
   if ($res === TRUE) {
    ?>
-   <meta http-equiv="refresh" content="0; URL=http:joint-mobility.php">
+   <meta http-equiv="refresh" content="0; URL=http:doctor.php">
    <?php
  }
 }

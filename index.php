@@ -31,6 +31,14 @@ if(isset($_POST['submit'])){
 			$_SESSION['user'] = $User;
 			header("Location: ortho/index.php");
 		}
+		if($type == "FITNESS"){
+			$_SESSION['user'] = $User;
+			header("Location: fitness/index.php");
+		}
+		if($type == "O & G"){
+			$_SESSION['user'] = $User;
+			header("Location: OG/index.php");
+		}
 	}
 	else{
 		echo "<script>
@@ -80,10 +88,12 @@ if(isset($_POST['submit'])){
 				<label><i class="fa fa-user" aria-hidden="true"></i> User type &nbsp;&nbsp;&nbsp;&nbsp;</label>
 				<select name="type" class="form-control col-sm-5">
 					<option value="Front Desk">Front Desk</option>
-					<option value="Paedratic">Pedratic</option>
+					<option value="Paedratic">Paediatrics</option>
 					<option value="Neurology">Neurology</option>
-					<option value="Occupation">Occupation</option>
-					<option value="ORTHOPAEDIC">ORTHOPAEDIC</option>
+					<option value="Occupation">Occupational Therapy</option>
+					<option value="ORTHOPAEDIC">Orthopaedics</option>
+					<option value="FITNESS">Fitness</option>
+					<option value="O & G">Woman Health(O & G)</option>
 				</select>
 			</div>
 			<div class="agile-field-txt">

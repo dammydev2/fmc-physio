@@ -2,6 +2,7 @@
 include("include/connect.php");
 //other DB
 $db_name ="fmcphy_gen";
+$password = "";
 $gen = new Mysqli($servername, $username, $password, $db_name);
 if (isset($_POST['Search'])) {
 	$id = $_POST['id'];
@@ -16,6 +17,7 @@ if (isset($_POST['Search'])) {
 		while ($row = $res->fetch_array()) {
 			$name = $row[1];
 			$dob = $row[3];
+			$code2 = $row[6];
 		}
 		$sel = "SELECT * FROM receipt";
 		$res = $conn->query($sel);
@@ -27,11 +29,12 @@ if (isset($_POST['Search'])) {
 }
 
 if (isset($_POST['submit'])) {
+	extract($_POST);
 	$pname = $_POST['Pname'];
 	$DOB = $_POST['DOB'];
 	$num = $_POST['num'];
 	$rec = $_POST['rec'];
-	$ins = "INSERT INTO table_1(num,name,DOB,rec) VALUES('$num','$pname','$num','$rec')";
+	$ins = "INSERT INTO table_1(num,name,DOB,rec,code2,Diagnosis) VALUES('$num','$pname','$DOB','$rec','$code2','$Diagnosis')";
 	$res = $conn->query($ins);
 	$upd = "UPDATE receipt SET rec_num='$rec'";
 	$res2 = $conn->query($upd);
@@ -91,7 +94,7 @@ if (isset($_POST['submit'])) {
 					<div class="col-sm-4">
 						<form method="POST">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Physio Number</label>
+								<label for="exampleInputEmail1">System Physio Number</label>
 								<input type="text" name="id" class="form-control" id="exampleInputEmail1" />
 							</div>
 							<button type="submit" class="btn btn-default" name="Search">Search</button>
@@ -106,6 +109,14 @@ if (isset($_POST['submit'])) {
 								<div class="form-group">
 									<label for="exampleInputEmail1">Patient Name</label>
 									<input type="text" name="Pname" required readonly value="<?php echo($name) ?>" class="form-control" id="exampleInputEmail1" />
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Physio Number</label>
+									<input type="text" name="code2"  required readonly value="<?php echo($code2) ?>" class="form-control" id="exampleInputEmail1" />
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Diagnosis</label>
+									<input type="text" name="Diagnosis"  required  class="form-control" id="exampleInputEmail1" />
 								</div>
 								<div class="form-group">
 									<label for="exampleInputEmail1">Date of birth</label>

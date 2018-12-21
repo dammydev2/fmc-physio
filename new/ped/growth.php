@@ -204,7 +204,7 @@ if (isset($_POST['submit'])) {
 										</tr>
 									</table>
 									<p>&nbsp;</p>
-									<p>Please describe your child</p>
+									<p>Does your child have any of the following conditions?</p>
 									<div class="form-group">
 										<label><input type="checkbox" name="describe[]" value="Mostly quite"> Mostly quite</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="checkbox" name="describe[]" value="Tires easily"> Tires easily</label>&nbsp;&nbsp;&nbsp;&nbsp;

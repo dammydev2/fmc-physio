@@ -5,10 +5,9 @@ $idtwo = $_SESSION['idtwo'];
 $rec = $_SESSION['rec'];
 extract($_POST);
 if(isset($_POST['submit'])){
-	$ins = "INSERT INTO fmcphy_neu.ans VALUES(NULL,'$idtwo','$rec','$findings','$impression','$treatment','$means')";
+	ECHO $ins = "INSERT INTO fmcphy_neu.ans VALUES(NULL,'$idtwo','$rec','$findings','$impression','$treatment','$means')";
 	$res = $conn->query($ins);
 	if($res === TRUE){
-		
                 $_SESSION['idtwo'] = $idtwo;
                 $_SESSION['nhis'] = $nhis;
 				$_SESSION['rec'] = $rec;
@@ -67,7 +66,7 @@ if(isset($_POST['submit'])){
             
      <!-- pyhsioteraphy box -->
      <div class="sub" >
-        <h3>OBJECT ASSESSMENT</h3><br/>
+        <h3>OBJECTIVE ASSESSMENT</h3><br/>
 
 
     </div>

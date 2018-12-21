@@ -51,7 +51,7 @@ $rec = $_SESSION['rec'];
             
      <!-- pyhsioteraphy box -->
      <div class="sub" >
-        <h3>OBJECT ASSESSMENT</h3><br/>
+        <h3>OBJECTIVE ASSESSMENT</h3><br/>
 
 
     </div>
@@ -79,7 +79,7 @@ $rec = $_SESSION['rec'];
                  <div class="col-lg-6 ">
                     <div class="form-group">
                         <div class="form-check">
-                         <label class="form-check-label" for="exampleRadios1">At risk of abdominal muscle tone and contractures</label>&nbsp;&nbsp;
+                         <label class="form-check-label" for="exampleRadios1">At risk of abnormal muscle tone and contractures</label>&nbsp;&nbsp;
                          <input class="form-check-input" type="radio" name="muscle_tone" id="exampleRadios1" value="yes" checked>
                          <label class="form-check-label" for="exampleRadios1">Yes</label>&nbsp;
                          <input class="form-check-input" type="radio" name="muscle_tone" id="exampleRadios1" value="no" checked>
@@ -106,17 +106,20 @@ $rec = $_SESSION['rec'];
                  <label class="form-check-label" for="exampleRadios1">Yes</label>&nbsp;
                  <input class="form-check-input" type="radio" name="sitting" id="exampleRadios1" value="Downstiars" checked>
                  <label class="form-check-label" for="exampleRadios1">No</label>
+                 <input type="text" name="sitting2" placeholder="if no enter reason">
              </div>
          </div>
      </div>
      <div class="col-lg-6 ">
         <div class="form-group">
             <div class="form-check">
-             <label class="form-check-label" for="exampleRadios1">ability to transfer independenty?</label>&nbsp;&nbsp;
+             <label class="form-check-label" for="exampleRadios1">ability to transfer independentLy?</label>&nbsp;&nbsp;
              <input class="form-check-input" type="radio" name="depend" id="exampleRadios1" value="yes" checked>
              <label class="form-check-label" for="exampleRadios1">Yes</label>&nbsp;
              <input class="form-check-input" type="radio" name="depend" id="exampleRadios1" value="no" checked>
-             <label class="form-check-label" for="exampleRadios1">No</label>
+             <label class="form-check-label" for="exampleRadios1">No</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input class="form-check-input" type="radio" name="depend" id="exampleRadios1" value="need assistance" checked>
+             <label class="form-check-label" for="exampleRadios1">Need assistance</label>
          </div>
      </div>
  </div>
@@ -158,13 +161,13 @@ $rec = $_SESSION['rec'];
         <td>
             <input type="text" name="question[]" value="turning over" style="display: none;">
             <b>Turning Over</b><br>
-            Please turn over from your back to your side
+            Please turn over from your right to left
         </td>
         <td>
             <select name="answer[]" class="form-control">
                 <option value="Unable to perform">Unable to perform</option>
-                <option value="assistance of two people">assistance of two people</option>
-                <option value="assistance of one people">assistance of one people</option>
+                <option value="assistance of two people">assistance of two persons</option>
+                <option value="assistance of one people">assistance of one persons</option>
                 <option value="requires supervision or verbal instruction">requires supervision or verbal instruction</option>
                 <option value="requires an aid or an appliance">requires an aid or an appliance</option>
                 <option value="independent">independent</option>
@@ -173,8 +176,8 @@ $rec = $_SESSION['rec'];
     </tr>
     <tr>
         <td>
-            <input type="text" name="question[]" value="lying or sitting" style="display: none;">
-            <b>lying or sitting</b><br>
+            <input type="text" name="question[]" value="lying or siting" style="display: none;">
+            <b>lying or siting</b><br>
             Please sit uo on the side of the bed<br>
         </td>
         <td>

@@ -59,8 +59,8 @@ if (isset($_POST['submit'])) {
                     <td style="width: 200px;">Sit<input type="text" name="issue[]" value="Sit" style="display: none;"><input type="text" name="tp[]" value="Posture" style="display: none;"></td>
                     <td>
                       <select name="answer[]" class="form-control">
-                        <option value="impared">impared</option>
-                        <option value="not impared">not impared</option>
+                        <option value="impaired">impaired</option>
+                        <option value="not impaired">not impaired</option>
                       </select>
                     </td>
                     <td>
@@ -71,8 +71,8 @@ if (isset($_POST['submit'])) {
                     <td style="width: 200px;">Stand<input type="text" name="issue[]" value="Sit" style="display: none;"><input type="text" name="tp[]" value="Posture" style="display: none;"></td>
                     <td>
                       <select name="answer[]" class="form-control">
-                        <option value="impared">impared</option>
-                        <option value="not impared">not impared</option>
+                        <option value="impaired">impaired</option>
+                        <option value="not impaired">not impaired</option>
                       </select>
                     </td>
                     <td>
@@ -87,8 +87,8 @@ if (isset($_POST['submit'])) {
                     <td style="width: 200px;">Sit<input type="text" name="issue[]" value="Sit" style="display: none;"><input type="text" name="tp[]" value="Balance static" style="display: none;"></td>
                     <td>
                       <select name="answer[]" class="form-control">
-                        <option value="impared">impared</option>
-                        <option value="not impared">not impared</option>
+                        <option value="impaired">impaired</option>
+                        <option value="not impaired">not impaired</option>
                       </select>
                     </td>
                     <td>
@@ -99,8 +99,8 @@ if (isset($_POST['submit'])) {
                     <td style="width: 200px;">Stand<input type="text" name="issue[]" value="Sit" style="display: none;"><input type="text" name="tp[]" value="Balance static" style="display: none;"></td>
                     <td>
                       <select name="answer[]" class="form-control">
-                        <option value="impared">impared</option>
-                        <option value="not impared">not impared</option>
+                        <option value="impaired">impaired</option>
+                        <option value="not impaired">not impaired</option>
                       </select>
                     </td>
                     <td>
@@ -115,8 +115,8 @@ if (isset($_POST['submit'])) {
                     <td style="width: 200px;">Sit<input type="text" name="issue[]" value="Sit" style="display: none;"><input type="text" name="tp[]" value="Balance dynamic" style="display: none;"></td>
                     <td>
                       <select name="answer[]" class="form-control">
-                        <option value="impared">impared</option>
-                        <option value="not impared">not impared</option>
+                        <option value="impaired">impaired</option>
+                        <option value="not impaired">not impaired</option>
                       </select>
                     </td>
                     <td>
@@ -127,8 +127,8 @@ if (isset($_POST['submit'])) {
                     <td style="width: 200px;">Stand<input type="text" name="issue[]" value="Sit" style="display: none;"><input type="text" name="tp[]" value="Balance dynamic" style="display: none;"></td>
                     <td>
                       <select name="answer[]" class="form-control">
-                        <option value="impared">impared</option>
-                        <option value="not impared">not impared</option>
+                        <option value="impaired">impaired</option>
+                        <option value="not impaired">not impaired</option>
                       </select>
                     </td>
                     <td>

@@ -123,10 +123,10 @@ if (isset($_POST['submit'])) {
 									</table>
 									<div class="form-group col-sm-12">
 										<div class="col-sm-6">
-											<input type="text" name="weight" placeholder="Birth Weight" required="">
+											Birth Weight: <input type="text" name="weight" placeholder="Birth Weight" required="">
 										</div>
 										<div class="col-sm-6">
-											<input type="text" name="lenght" placeholder="Birth lenght" required="">
+											<input type="text" name="lenght" placeholder="Birth lenght" value="Not Applicable" style="display: none;">
 										</div>
 									</div>
 									<input type="text" name="rec" value="<?php echo $rec; ?>" readonly class="form-control" id="exampleInputEmail1" style="display: none;" />

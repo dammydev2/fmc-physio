@@ -2,12 +2,13 @@
             include('../includes/db.php');
             session_start();
             ob_start();
+            error_reporting(E_ALL);
             extract($_POST);
             if (isset($_POST['submit'])) {
               $resp = $_POST['respiratory'];
               $muscle = $_POST['muscle_tone'];
               $shoulder = $_POST['shoulder'];
-              $sitting = $_POST['sitting'];
+              $sitting = $_POST['sitting'] ;
               $depend = $_POST['depend'];
               $mobility = $_POST['mobility'];
               $actn= $_POST['actn_taken'];
@@ -15,7 +16,7 @@
               $nhis = $_POST['nhis'];
               $rec = $_POST['rec'];
 
-              $ins = "INSERT INTO asp4 (idtwo,complications,contractures,shoulderpain,sittingbal,independent, indexscore,actiontaken,nhis,rec) VALUES ('$idtwo','$resp','$muscle','$shoulder','$sitting','$depend','$mobility','$actn','$nhis','$rec')";
+             echo $ins = "INSERT INTO asp4 (idtwo,complications,contractures,shoulderpain,sittingbal,independent, indexscore,actiontaken,nhis,rec) VALUES ('$idtwo','$resp','$muscle','$shoulder','$sitting','$depend','$mobility','$actn','$nhis','$rec')";
               $result = $conn->query($ins);
 
               extract($_POST);

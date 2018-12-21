@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 
     <!-- Simple-chart -->
     <div class="outer-w3-agile mt-3">
-      <h4 class="tittle-w3-agileits mb-4">Performance skills</h4>
+      <h4 class="tittle-w3-agileits mb-4">INTERVENTION</h4>
       <div style="width: 700px;">
 
         <p>&nbsp;</p>
@@ -47,10 +47,10 @@ if (isset($_POST['submit'])) {
                   <label>Patient/family goals</label>
                   <input type="text" name="Patient" class="form-control">
                 </div>
-                <div class="form-group">
+                <!--div class="form-group">
                   <label>comment</label>
                   <textarea class="form-control" name="comment"></textarea>
-                </div>
+                </div-->
                 <div class="form-group">
                   <label>Analysis of Occupational performance</label>
                   <textarea class="form-control" name="Analysis" placeholder="clinician final report to be here"></textarea>

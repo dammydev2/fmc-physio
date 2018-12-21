@@ -134,6 +134,8 @@ if(!empty($_POST["submit"])) {
 									<option value="Neurology">Neurology</option>
 									<option value="Occupation">Occupation</option>
 									<option value="ORTHOPAEDIC">ORTHOPAEDIC</option>
+									<option value="FITNESS">FITNESS</option>
+									<option value="O & G">O & G</option>
 								</select>
 							</div>
 							<div>

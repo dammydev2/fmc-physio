@@ -21,14 +21,7 @@ if (isset($_POST['submit'])) {
   $ins = "INSERT INTO fmcphy_ortho.table_3 VALUES(NULL,'$num','$rec','$worse','$best','$current','$duration','$aggravating','$alleviating','$behavior','$medication','$home','$measures','$joint','$flexibility')";
   $res = $conn->query($ins);
 
-//INSERTING MEDICAL HISTORY
-  extract($_POST);
-  $c = count($_POST['medical']);
-  for($a = 0; $a < $c; $a++)
-  { 
-    $ins = "INSERT INTO fmcphy_ortho.medical VALUES(NULL,'$num','$rec','".$medical[$a]."')";
-    $res2 = $conn->query($ins);
-  }
+
 //INSERTING MEDICAL HISTORY
   extract($_POST);
   $c = count($_POST['precautions']);
@@ -180,21 +173,7 @@ if (isset($_POST['submit'])) {
                 </div>
               </div>
               <div class="col-sm-12">
-                <div class="form-group" style="background: #fff;">
-                  <p>&nbsp;</p>
-                  <label for="exampleInputEmail1"><b>Past Medical History</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Cardiac" />cardiac &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="NIDDM/IDDM" />NIDDM/IDDM &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="CVA" />CVA &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Hypertension" />Hypertension &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Cancer" />Cancer &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Osteoporosis" />Osteoporosis &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Respiratory" />Respiratory &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Fractures" />Fractures &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="medical[]"  value="Falls" />Falls &nbsp;&nbsp;&nbsp;
-                  <input type="text" name="medical[]"  placeholder="add other medical history" /> &nbsp;&nbsp;&nbsp;
-                  <p>&nbsp;</p>
-                </div>
+                
                 <div class="col-sm-12">
                 <div class="form-group">
                   <label for="exampleInputEmail1"><b>Precautions</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -217,8 +196,9 @@ if (isset($_POST['submit'])) {
                 <div class="form-group" style="background: #fff;">
                   <p>&nbsp;</p>
                   <label for="exampleInputEmail1"><b>Living Situation</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="living[]"  value="Independent" />Independent &nbsp;&nbsp;&nbsp;
-                  <input type="checkbox" name="living[]"  value="Caregiver" />Caregiver &nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="living[]"  value="Independent" />Independent &nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="living[]"  value="Caregiver" />Caregiver &nbsp;&nbsp;&nbsp;<br>
+                  <h4>Please choose from below if <b>caregiver is choose from above</b></h4>
                   <input type="checkbox" name="living[]"  value="Able to assist with program" />Able to assist with program &nbsp;&nbsp;&nbsp;
                   <input type="checkbox" name="living[]"  value="Unable to assist with program" />Unable to assist with program &nbsp;&nbsp;&nbsp;
                   <input type="checkbox" name="living[]"  value="Willing to assist with program" />Willing to assist with program &nbsp;&nbsp;&nbsp;

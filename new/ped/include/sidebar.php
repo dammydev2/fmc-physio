@@ -17,7 +17,7 @@
 <!--/sidebar-menu-->
 <div class="sidebar-menu" style="background: #8FBC8F;">
 	<header class="logo1">
-		<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+		<a href="#" class="sidebar-icon">Paediatrics <span class="fa fa-bars"></span> </a> 
 	</header>
 	<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
 	<div class="menu">
@@ -27,6 +27,7 @@
 
 			<li><a href="add-report.php"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Add report</span><div class="clearfix"></div></a></li>
 			<li id="menu-academico" ><a href="view-report.php"><i class="fa fa-bar-chart"></i><span>View Report</span><div class="clearfix"></div></a></li>
+			<li id="menu-academico" ><a href="query.php"><i class="fa fa-bar-chart"></i><span>Query Diagnosis</span><div class="clearfix"></div></a></li>
 			<li id="menu-academico" ><a href="../../index.php"><i class="fa fa-bar-chart"></i><span>Logout</span><div class="clearfix"></div></a></li>
 			<!--li id="menu-academico" ><a href="#"><i class="fa fa-list-ul" aria-hidden="true"></i><span> Short Codes</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 				<ul id="menu-academico-sub" >

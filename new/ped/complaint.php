@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
 										<input type="text" name="id" value="<?php echo $num; ?>" readonly class="form-control" id="exampleInputEmail1" />
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">what are the main concern regarding your child?</label>
+										<label for="exampleInputEmail1">What are the main concern regarding your child?</label>
 										<!--input type="text" name="reason" required  class="form-control" id="exampleInputEmail1" /-->
 									</div>
 									<div class="form-group">

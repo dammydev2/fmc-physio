@@ -180,6 +180,8 @@ $rec = $_SESSION['rec'];
 		}
 			?>
 </table>
+<p>&nbsp</p>
+<p>Therapist Signature: ................................. <span style="margin-left: 100px;"> Date: <b><?php echo date("d/m/Y") ?></b></span></p>
 
 	</div>
 </div>

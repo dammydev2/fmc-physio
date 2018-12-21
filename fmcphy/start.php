@@ -26,6 +26,7 @@
               $_SESSION['name'] = $row[1];
               $_SESSION['dob'] = $row[3];
               $_SESSION['num'] = $num;
+              $_SESSION['code2'] = $row['code2'];
               header("Location: assprotocol.php");
           }
       }

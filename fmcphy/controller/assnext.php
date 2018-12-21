@@ -15,7 +15,8 @@ while ($res = $query-> fetch_assoc()) {
 if (isset($_POST['continue'])) {
   extract($_POST);
   
-
+$alert = $alert1. " " . $alert2. ' ' .$alert3. " " .$alert4. " " .$alert5;
+$cognition = $cognition. " ". $cognition2;
 
   $ins = "INSERT INTO fmcphy_neu.asp VALUES(NULL,'$idtwo','$alert','$resp','$cognition','$neglect','$comm','$swallow','$pain','$bedmobility','$nhis','$rec')";
   $result = $conn->query($ins);

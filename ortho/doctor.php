@@ -1,5 +1,6 @@
 <?php
 include("includes/connect.php");
+$_SESSION['user'];
 $num = $_SESSION['num'];
 $rec = $_SESSION['rec'];
 if (isset($_POST['submit'])) {
@@ -63,7 +64,7 @@ if (isset($_POST['submit'])) {
                   <div class="panel-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Physiotheraphyst Name</label>
-                      <input type="text" name="name" required class="form-control" id="exampleInputEmail1" />
+                      <input type="text" name="name" value="<?php echo $_SESSION['user'] ?>" readonly required class="form-control" id="exampleInputEmail1" />
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Completion Date</label>

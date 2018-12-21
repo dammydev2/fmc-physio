@@ -58,6 +58,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -74,6 +75,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -90,6 +92,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -106,6 +109,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -122,6 +126,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -138,6 +143,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -154,6 +160,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -170,6 +177,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -186,6 +194,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
                                           <option value="independent">independent</option>
+                                          <option value="not applicable">not applicable</option>
                                       </select>
                                   </td>
                                   <td>

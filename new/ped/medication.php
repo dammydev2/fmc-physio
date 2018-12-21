@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
 										<textarea class="form-control" name="communication" placeholder="describe communication difficulties here"></textarea>
 									</div>
 									<div class="form-group">
-										<label>when was the problem first noticed</label>
+										<label>When was the problem first noticed</label>
 										<input type="date" name="date_notices" class="form-control" style="width: 50%;">
 									</div>
 									<div class="form-group">

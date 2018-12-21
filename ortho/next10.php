@@ -62,36 +62,7 @@ if (isset($_POST['submit'])) {
                 <input type="text" name="num" style="display: none;" value="<?php echo($num) ?>" class="form-control" id="exampleInputEmail1" />
                 <input type="text" name="rec" style="display: none;" value="<?php echo($rec) ?>" class="form-control" id="exampleInputEmail1" />
                 <!--the session collected-->
-                <div class="panel panel-primary  w3-card w3-sand">
-                  <header class="w3-container w3-blue">
-                    <h4>Gait   </h4>
-                  </header>
-                  <div class="panel-body">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Weight Bearing</label>
-                      <select name="Weight" class="form-control">
-                        <option value="partial">partial</option>
-                        <option value="full">full</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Assistive Device</label>
-                      <input type="text" name="Assistive"  required class="form-control" id="exampleInputEmail1" />
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Assistance</label>
-                      <input type="text" name="Assistance"  required class="form-control" id="exampleInputEmail1" />
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Distance</label>
-                      <input type="text" name="Distance"  required class="form-control" id="exampleInputEmail1" />
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Proprioception</label>
-                      <input type="text" name="pro"  required class="form-control" id="exampleInputEmail1" />
-                    </div>
-                </div>
-                </div>
+                
               </div>
               <div class="col-sm-12">
                 <div class="form-group" style="background: #fff;">

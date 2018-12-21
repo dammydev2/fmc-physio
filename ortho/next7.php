@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
                   </header>
                   <div class="panel-body">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Muscle Circumference</label>
+                      <label for="exampleInputEmail1">Muscle circumference</label>
                       <input type="text" name="Circumference" required class="form-control" id="exampleInputEmail1" />
                     </div>
                     <div class="form-group">
@@ -287,7 +287,7 @@ if (isset($_POST['submit'])) {
                         </td>
                       </tr>
                       <tr>
-                        <th colspan="2">Ankleand foot</th>
+                        <th colspan="2">Ankle and foot</th>
                       </tr>
                       <tr>
                         <td><input type="text" name="test[]" value="Talar Tilt Test" readonly></td>

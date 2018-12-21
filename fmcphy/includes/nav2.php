@@ -50,10 +50,13 @@ if (isset($_POST['logout'])) {
                     </li-->
                     
                      <li>
-                        <a href="start.php"><i class="fa fa-flask fa-fw">&nbsp</i>Muscle Report</a>
+                        <a href="start.php"><i class="fa fa-flask fa-fw">&nbsp</i>Patient consultation</a>
                     </li>
                     <li>
                         <a href="report.php"><i class="fa fa-table fa-fw"></i>Check report</a>
+                    </li>
+                    <li>
+                        <a href="query.php"><i class="fa fa-table fa-fw"></i>Query Diagnosis</a>
                     </li>
 					<li>
                        <a href="../index.php">Logout</a>

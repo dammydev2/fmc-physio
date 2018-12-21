@@ -67,13 +67,11 @@ $idtwo = $_SESSION['idtwo'];
               <div class="form-group">
                 <div class="input-group w3_w3layouts col-lg-12">
                   <span class="input-group-addon" id="basic-addon1">LEVEL OF ALERTNESS</span>
-                  <select name="alert" class="form-control" placeholder="s" aria-describedby="basic-addon1" required="" >
-                    <option>CHOOSE LEVEL</option>
-                    <option value="alert" >Alert </option>
-                    <option value="voice" >Voice </option>
-                    <option value="pain" >Pain </option>
-                    <option value="unresponsive" >Unresponsive</option>
-                  </select>
+                    Alert <input type="checkbox" name="alert1" value="alert">
+                    Voice <input type="checkbox" name="alert2" value="voice">
+                    Pain <input type="checkbox" name="alert3" value="pain">
+                    unresponsive <input type="checkbox" name="alert4" value="unresponsive">
+                    <input type="text" name="alert5" placeholder="enter more alert here">
                 </div>
               </div>
             </div>
@@ -89,11 +87,12 @@ $idtwo = $_SESSION['idtwo'];
             <div class="col-lg-6 ">
               <div class="form-group">
                 <div class="form-check">
-                 <label class="form-check-label" for="exampleRadios1">Cognition</label>&nbsp;&nbsp;
+                 <label class="form-check-label" for="exampleRadios1">Cognitve process</label>&nbsp;&nbsp;
                  <input class="form-check-input" type="radio" name="cognition" id="exampleRadios1" value="Yes" checked>
                  <label class="form-check-label" for="exampleRadios1">Yes</label>&nbsp;
                  <input class="form-check-input" type="radio" name="cognition" id="exampleRadios1" value="no" checked>
                  <label class="form-check-label" for="exampleRadios1">No</label>
+                 <input type="text" name="cognition2" placeholder="comment">
                </div>
              </div>
            </div>
@@ -164,15 +163,19 @@ $idtwo = $_SESSION['idtwo'];
    </div>
    <table class="table">
     <tr>
-      <th>Safe Levels</th>
+      <th>Safe Levels values</th>
       <th>Patient value</th>
     </tr>
     <tr>
-      <td><input type="text" name="question[]" value="BP" class="form-control" readonly></td>
+      <td><input type="text" name="question[]" value="BP DIASTOTIC 80-99" class="form-control" readonly></td>
       <td><input type="number" name="answer[]" placeholder="Enter patient value" min="99" max="180" class="form-control"></td>
     </tr>
     <tr>
-      <td><input type="text" name="question[]" value="HR" class="form-control" readonly>
+      <td><input type="text" name="question[]" value="BP SYSTOTIC 100-180" class="form-control" readonly></td>
+      <td><input type="number" name="answer[]" placeholder="Enter patient value" min="100" max="180" class="form-control"></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="question[]" value="HR 50-100" class="form-control" readonly>
         <input type="text" name="rec" value="<?php echo($rec)?>" class="form-control" readonly style="display: none;"></td>
       <td><input type="number" name="answer[]" placeholder="Enter patient value" min="39" max="100" class="form-control"></td>
     </tr>
@@ -191,6 +194,9 @@ $idtwo = $_SESSION['idtwo'];
       <th></th>
       <th>Value</th>
     </tr>
+    <tr style="color: #fff; text-align: center">
+      <td colspan="3">RANGE OF MOTION</td>
+    </tr>
     <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="Range of Motion" class="form-control" readonly></td>
@@ -209,6 +215,21 @@ $idtwo = $_SESSION['idtwo'];
     <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="sensation" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr style="background: #fff;">
+      <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="reflexes" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr style="background: #fff;">
+      <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="proprioception" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr style="background: #fff;">
+      <td><input type="text" name="tp[]" value="LEFT UPPER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" placeholder="Enter others" class="form-control" ></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
 
@@ -232,6 +253,21 @@ $idtwo = $_SESSION['idtwo'];
       <td><input type="text" name="issue[]" value="sensation" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
+    <tr>
+      <td><input type="text" name="tp[]" value="RIGHT UPPER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="reflexes" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="tp[]" value="RIGHT UPPER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="proprioception" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="tp[]" value="RIGHT UPPER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" placeholder="enter others" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
 
     <tr style="background: #fff;">
       <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
@@ -253,6 +289,21 @@ $idtwo = $_SESSION['idtwo'];
       <td><input type="text" name="issue[]" value="sensation" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
+    <tr style="background: #fff;">
+      <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="reflexes" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr style="background: #fff;">
+      <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="proprioception" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr style="background: #fff;">
+      <td><input type="text" name="tp[]" value="LEFT LOWER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="others" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
 
     <tr>
       <td><input type="text" name="tp[]" value="RIGHT LOWER LIMB" class="form-control" readonly></td>
@@ -272,6 +323,21 @@ $idtwo = $_SESSION['idtwo'];
     <tr>
       <td><input type="text" name="tp[]" value="RIGHT LOWER LIMB" class="form-control" readonly></td>
       <td><input type="text" name="issue[]" value="sensation" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="tp[]" value="RIGHT LOWER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="reflexes" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="tp[]" value="RIGHT LOWER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="proprioception" class="form-control" readonly></td>
+      <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="tp[]" value="RIGHT LOWER LIMB" class="form-control" readonly></td>
+      <td><input type="text" name="issue[]" value="others" class="form-control" readonly></td>
       <td><input type="text" name="ans[]" placeholder="Enter value here" class="form-control"></td>
     </tr>
   </table>

@@ -23,6 +23,14 @@ if (isset($_POST['submit'])) {
   }
   $ins = "INSERT INTO fmcphy_ortho.table_2 VALUES(NULL,'$num','$rec','$BP','$heart','$respiration','$compliant','$history','$symptoms','$onset','$pain','$des')";
   $res = $conn->query($ins);
+  //INSERTING MEDICAL HISTORY
+  extract($_POST);
+  $c = count($_POST['medical']);
+  for($a = 0; $a < $c; $a++)
+  { 
+    $ins = "INSERT INTO fmcphy_ortho.medical VALUES(NULL,'$num','$rec','".$medical[$a]."')";
+    $res2 = $conn->query($ins);
+  }
   if ($res === TRUE) {
    ?>
     <meta http-equiv="refresh" content="0; URL=http:next2.php">
@@ -98,6 +106,23 @@ if (isset($_POST['submit'])) {
                   <label for="exampleInputEmail1">History of present injury</label>
                   <input type="text" name="history" placeholder="History of present injury"  required  class="form-control" id="exampleInputEmail1" />
                 </div>
+              </div>
+                <div class="form-group col-sm-12" style="background: #fff;">
+                  <p>&nbsp;</p>
+                  <label for="exampleInputEmail1"><b>Past Medical History</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Cardiac" />cardiac &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="NIDDM/IDDM" />NIDDM/IDDM &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="CVA" />CVA &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Hypertension" />Hypertension &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Cancer" />Cancer &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Osteoporosis" />Osteoporosis &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Respiratory" />Respiratory &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Fractures" />Fractures &nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" name="medical[]"  value="Falls" />Falls &nbsp;&nbsp;&nbsp;
+                  <input type="text" name="medical[]"  placeholder="add other medical history" /> &nbsp;&nbsp;&nbsp;
+                  <p>&nbsp;</p>
+                </div>
+                <div class="col-sm-4">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Current Symptoms</label>
                   <input type="text" name="symptoms"  placeholder="Current Symptoms" required class="form-control" id="exampleInputEmail1" />
@@ -107,7 +132,7 @@ if (isset($_POST['submit'])) {
                   <input type="text" name="onset"  placeholder="Enter onset" required class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Pain</label>
+                  <label for="exampleInputEmail1">Pain Rating VRS</label>
                   <input type="text" name="pain"  placeholder="Enter pain" required class="form-control" id="exampleInputEmail1" />
                 </div>
               </div>

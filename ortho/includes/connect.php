@@ -4,7 +4,7 @@ session_start();
 error_reporting(0);
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "damilola92";
 $db = "fmcphy_ortho";
 
 // Create connection

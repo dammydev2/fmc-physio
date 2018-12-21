@@ -6,6 +6,8 @@ if (isset($_POST['submit'])) {
   $num = $_POST['num'];
   $rec = $_POST['rec'];
   extract($_POST);
+  $ins = "INSERT INTO fmcphy_ortho.gait VALUES(NULL,'$num','$rec','$Weight','$Assistive','$Assistance','$Distance','$pro')";
+  $res = $conn->query($ins);
   $c = count($_POST['Posture']);
   for($a = 0; $a < $c; $a++)
   { 
@@ -76,10 +78,45 @@ if (isset($_POST['submit'])) {
                       <input type="text" name="Palpation"  required class="form-control" id="exampleInputEmail1" />
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Functional Asseesment</label>
+                      <label for="exampleInputEmail1">Functional Assesment</label>
                       <textarea name="Functional" class="form-control" placeholder="next line action following patient response to previous treatment"></textarea>
                     </div>
+                    <div class="panel panel-primary  w3-card w3-sand">
+                  <header class="w3-container w3-blue">
+                    <h4>Gait   </h4>
+                  </header>
+                  <div class="panel-body">
                     <div class="form-group">
+                      <label for="exampleInputEmail1">Weight Bearing</label>
+                      <select name="Weight" class="form-control">
+                        <option value="partial">partial</option>
+                        <option value="full">full</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Assistive Device</label>
+                      <input type="text" name="Assistive"  required class="form-control" id="exampleInputEmail1" />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Assistance</label>
+                      <input type="text" name="Assistance"  required class="form-control" id="exampleInputEmail1" />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Distance</label>
+                      <input type="text" name="Distance"  required class="form-control" id="exampleInputEmail1" />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Proprioception</label>
+                      <input type="text" name="pro"  required class="form-control" id="exampleInputEmail1" />
+                    </div>
+                </div>
+                </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Clinical impression</label>
+                      <textarea name="Asseesment" class="form-control" placeholder="to write  things being done before and they cant do now"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <h4 class="w3-blue">Treatment Plan</h4>
                       <label for="exampleInputEmail1">Treatment provided during this visit</label>
                       <input type="text" name="Treatment"  required class="form-control" id="exampleInputEmail1" />
                     </div>
@@ -90,10 +127,6 @@ if (isset($_POST['submit'])) {
                         <option value="not tolerated">not tolerated</option>
                         <option value="complain">complain</option>
                       </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Assessment</label>
-                      <textarea name="Asseesment" class="form-control" placeholder="to write  things being done before and they cant do now"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Rehab Potential/Prognosis</label>

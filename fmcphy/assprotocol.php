@@ -92,6 +92,22 @@
                             <div class="col-lg-6 ">
                                 <div class="form-group">
                                     <div class="input-group w3_w3layouts col-lg-12">
+                                        <span class="input-group-addon" id="basic-addon1">Physio Number</span>
+                                        <input type="text" name="code2" value="<?php echo $_SESSION['code2'] ?>" class="form-control" readonly placeholder="address" aria-describedby="basic-addon1" required="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="form-group">
+                                    <div class="input-group w3_w3layouts col-lg-12">
+                                        <span class="input-group-addon" id="basic-addon1">Diagnosis</span>
+                                        <input type="text" name="Diagnosis"  class="form-control" placeholder="" aria-describedby="basic-addon1" required="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="form-group">
+                                    <div class="input-group w3_w3layouts col-lg-12">
                                         <span class="input-group-addon" id="basic-addon1">NHIS NO</span>
                                         <input type="text" name="nhs_num" value="<?php echo $nhis_num; ?>" class="form-control" placeholder="nhs num" aria-describedby="basic-addon1" value="" required="" / >
                                         <input type="text" name="rec" value="<?php echo $rec_num; ?>" class="form-control" placeholder="nhs num" aria-describedby="basic-addon1" value="" style="display: none;" required="" / >
@@ -147,7 +163,7 @@
                             <div class="col-lg-6 ">
                                 <div class="form-group">
                                     <div class="input-group w3_w3layouts col-lg-12">
-                                        <span class="input-group-addon" id="basic-addon1">CONDITION</span>
+                                        <span class="input-group-addon" id="basic-addon1">CONSENT</span>
                                         <select name="con" class="form-control" placeholder="" aria-describedby="basic-addon1" required="" >
                                             <!-- <option>CHOOSE THE CONDITION</option> -->
                                             <option value="consent to exam obtained">CONSENT TO EXAM OBTAINED</option>

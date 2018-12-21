@@ -25,6 +25,7 @@ if (isset($_POST['Search'])) {
     while ($row = $res->fetch_array()) {
       $name = $row[1];
       $dob = $row[3];
+      $code2 = $row['code2'];
     }
     $sel = "SELECT * FROM receipt";
     $res = $conn->query($sel);
@@ -89,6 +90,10 @@ if (isset($_POST['Search'])) {
                   <input type="text" name="Pname" required readonly value="<?php echo($name) ?>" class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Physio Number</label>
+                  <input type="text" name="code2"  readonly value="<?php echo($code2) ?>" class="form-control" id="exampleInputEmail1" />
+                </div>
+                <div class="form-group">
                   <label for="exampleInputEmail1">Date of birth</label>
                   <input type="text" name="DOB"  required readonly value="<?php echo($dob) ?>" class="form-control" id="exampleInputEmail1" />
                   <input type="text" name="num" style="display: none;" value="<?php echo($id) ?>" class="form-control" id="exampleInputEmail1" />
@@ -102,10 +107,10 @@ if (isset($_POST['Search'])) {
                   <label for="exampleInputEmail1">Diagnosis</label>
                   <input type="text" name="diagnosis"  placeholder="Enter Diagnosis" required class="form-control" id="exampleInputEmail1" />
                 </div>
-                <div class="form-group">
+                <!--div class="form-group">
                   <label for="exampleInputEmail1">Onset (i.e date pain started)</label>
                   <input type="date" name="onset" placeholder="(i.e date pain started)"  required  class="form-control" id="exampleInputEmail1" />
-                </div>
+                </div-->
                 <div class="form-group">
                   <label for="exampleInputEmail1">Occupation</label>
                   <input type="text" name="occupation"  placeholder="Enter Occupation" required class="form-control" id="exampleInputEmail1" />

@@ -1,7 +1,7 @@
 <?php
 //:::::::::::::::::MY QUERY STARTS HERE::::::::::::
 include("include/connect.php");
-error_reporting(E_ALL);
+error_reporting(0);
 $sel = "SELECT * FROM patient_num";
 $res = $gen->query($sel);
 while ($row = $res->fetch_array()) {
@@ -13,8 +13,56 @@ while ($row = $res->fetch_array()) {
 require_once("dbcontroller.php");
 error_reporting(E_ALL);
 $db_handle = new DBController();
+
+
+$target_dir = "image/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+
+
+
 if(!empty($_POST["submit"])) {
-	echo  "<span style='color: #fff'>".$query = "INSERT INTO reg(name, p_id, DOB,eval_date) VALUES('".$_POST["name"]."','".$_POST["code"]."','".$_POST["dob"]."','')";
+
+$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+$img = basename( $_FILES["fileToUpload"]["name"]);
+
+	echo  "<span style='color: #fff'>".$query = "INSERT INTO reg(name, p_id, DOB,eval_date,img,code2) VALUES('".$_POST["name"]."','".$_POST["code"]."','".$_POST["dob"]."','','$img','".$_POST["code2"]."')";
 	$result = $db_handle->executeQuery($query);
 	//::::::::UPDATING THE PHYSIO NUM::::::::
 	
@@ -91,13 +139,13 @@ if(!empty($_POST["submit"])) {
 					<li class="breadcrumb-item"><a href="index.html">Home</a> <i class="fa fa-angle-right"></i>Front Desk</li>
 				</ol>
 				<!--four-grids here-->
-				<div class="four-grids" style="height: 500px;">
-					<div class=" w3-sand" style="background: #fff; padding: 5px; height: 400px;">
+				<div class="four-grids" style="min-height: 500px;">
+					<div class=" w3-sand" style="background: #fff; padding: 5px; min-height: 400px;">
 						<!--::::::CRUD STARTS:::::::::::::-->
 						<p>&nbsp;</p>
 						<h2><b>ADD PATIENT</b></h2>
 						<div class="col-sm-3"></div>
-						<form name="frmToy" method="POST" class="col-sm-5" action="" id="frmToy" onClick="return validate();">
+						<form name="frmToy" method="POST" enctype="multipart/form-data" class="col-sm-5" action="" id="frmToy" onClick="return validate();">
 							<div id="mail-status"></div>
 							<div class="form-group">
 								<label style="padding-top:20px;">Name</label>
@@ -108,12 +156,21 @@ if(!empty($_POST["submit"])) {
 							<div class="form-group">
 								<label>Physio Number</label>
 								<span id="code-info" class="info"></span><br/>
+								<input type="text" name="code2" id="code" class="demoInputBox form-control">
+							</div>
+							<div class="form-group">
+								<label>System Physio Number</label>
+								<span id="code-info" class="info"></span><br/>
 								<input type="text" name="code" id="code" value="<?php echo($pnum); ?>" readonly class="demoInputBox form-control">
 							</div>
 							<div class="form-group">
 								<label>Date of Birth</label> 
 								<span id="category-info" class="info"></span><br/>
 								<input type="date" name="dob" id="category" class="demoInputBox form-control" >
+							</div>
+							<div class="form-group">
+								Select image to upload:
+								<input type="file" name="fileToUpload" id="fileToUpload" required="" class="form-control">
 							</div>
 							<div>
 								<input type="submit" name="submit" id="btnAddAction" value="Save" />

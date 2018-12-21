@@ -2,9 +2,9 @@
 <!-- Sidebar Holder -->
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h1>
-            <a href="index.html">Modernize</a>
-        </h1>
+        <h5>
+            <a href="index.html">Occupational Therapy</a>
+        </h5>
         <span>M</span>
     </div>
     <div class="profile-bg"></div>
@@ -47,6 +47,9 @@
                     <a href="print-mental.php">Print Mental health</a>
                 </li>
             </ul>
+        </li>
+        <li>
+            <a href="query.php">Query Diagnosis</a>
         </li>
         <li>
             <a href="../index.php">Logout</a>

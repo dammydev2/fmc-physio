@@ -21,6 +21,11 @@
             <span>print evaluation</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="query.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Query Diagnosis</span></a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="../index.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>logout</span></a>

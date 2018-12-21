@@ -147,7 +147,7 @@ if (isset($_POST['submit'])) {
 										<label><input type="checkbox" name="describe[]" value="tuberculosis"> tuberculosis</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="checkbox" name="describe[]" value="diabetis type I and II"> diabetis (Type I and II)</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="checkbox" name="describe[]" value="metal implant"> metal implant</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										<label><input type="checkbox" name="describe[]" value="pregnancy"> Prgnancy (currently)</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="checkbox" name="describe[]" value="pregnancy"> Pregnancy (currently)</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="checkbox" name="describe[]" value="whopping cough"> whooping cough</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="checkbox" name="describe[]" value="dizziness/fainting"> dizziness/fainting</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="checkbox" name="describe[]" value="mumps"> mumps</label>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -167,17 +167,17 @@ if (isset($_POST['submit'])) {
 												<td><input type="checkbox" name="other[]" value="Earing difficulties"> Earing difficulties</td>
 												<td><input type="text" class="form-control" name="comment[]" placeholder="if yes. Aided?"></td>
 											</tr>
-											<tr>
+											<!--tr>
 												<td><input type="checkbox" name="other[]" value="PE ear tubes inserted"> PE ear tubes inserted</td>
 												<td><input type="text" class="form-control" name="comment[]" placeholder="if yes. Describe?"></td>
 											</tr>
 											<tr>
 												<td><input type="checkbox" name="other[]" value="Vision problems"> PE ear Vision problems</td>
 												<td><input type="text" class="form-control" name="comment[]" placeholder="if yes. treatment?"></td>
-											</tr>
+											</tr-->
 											<tr>
 												<td><textarea name="other[]" readonly="" class="form-control">have you ever purchased or rented durable Medical Equipment, orthortics, prosthetics or supplies?</textarea></td>
-												<td><input type="text" class="form-control" name="comment[]" placeholder="iPlease explain"></td>
+												<td><input type="text" class="form-control" name="comment[]" placeholder="Please explain"></td>
 											</tr>
 										</table>
 									</div>

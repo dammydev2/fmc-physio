@@ -92,7 +92,7 @@ require_once("perpage.php");
 					<li class="breadcrumb-item"><a href="index.html">Home</a> <i class="fa fa-angle-right"></i>Front Desk</li>
 				</ol>
 				<!--four-grids here-->
-				<div class="four-grids" style="height: 500px;">
+				<div class="four-grids" style="min-height: 500px;">
 					<div class=" w3-sand" style="background: #fff; padding: 5px;">
 						<!--::::::CRUD STARTS:::::::::::::-->
 						<p>&nbsp;</p>
@@ -110,9 +110,10 @@ require_once("perpage.php");
 									<thead>
 										<tr>
 											<th style="background: black; color: white;"><strong>Name</strong></th>
+											<th style="background: black; color: white;"><strong>Sys Physio Number</strong></th>
 											<th style="background: black; color: white;"><strong>Physio Number</strong></th>  
 											<th style="background: black; color: white;"><strong>Date of Birth</strong></th>
-
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -124,9 +125,15 @@ require_once("perpage.php");
 													<tr style="color: #000;">
 														<td><?php echo $result[$k]["name"]; ?></td>
 														<td><?php echo $result[$k]["p_id"]; ?></td>
+														<td><?php echo $result[$k]["code2"]; ?></td>
 														<td><?php echo $result[$k]["DOB"]; ?></td>
+														<td><img src="image/<?php echo $result[$k]["img"]; ?>" style="height: 100px; width: 100px;"></td>
 														<td>
-															<a class="btnEditAction btn btn-success" href="edit.php?id=<?php echo $result[$k]["id"]; ?>">Edit</a> <a style="background: red; color: #fff;" class="btn btnDeleteAction" href="delete.php?action=delete&id=<?php echo $result[$k]["id"]; ?>">Delete</a>
+															<a class="btnEditAction btn btn-success" href="edit.php?id=<?php echo $result[$k]["id"]; ?>">Edit</a> 
+
+															<a class="btnEditAction btn btn-primary" href="print.php?id=<?php echo $result[$k]["id"]; ?>">print</a> 
+
+															<a style="background: red; color: #fff;" class="btn btnDeleteAction" href="delete.php?action=delete&id=<?php echo $result[$k]["id"]; ?>">Delete</a>
 														</td>
 													</tr>
 													<?php

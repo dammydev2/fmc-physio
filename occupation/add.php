@@ -24,6 +24,7 @@ if (isset($_POST['Search'])) {
     while ($row = $res->fetch_array()) {
       $name = $row[1];
       $dob = $row[3];
+      $code2 = $row['code2'];
     }
     $sel = "SELECT * FROM receipt";
     $res = $conn->query($sel);
@@ -38,7 +39,7 @@ if (isset($_POST['submit'])) {
     extract($_POST);
     $upd = "UPDATE receipt SET rec_num='$rec'";
         $res = $conn->query($upd);
-    $ins = "INSERT INTO fmcphy_occp.assesment VALUES(NULL,'$Pname','$DOB','$num','$rec','$Treatment','$history','$Medications','$dt','$Occupational')";
+    $ins = "INSERT INTO fmcphy_occp.assesment VALUES(NULL,'$Pname','$DOB','$num','$rec','$Treatment','$history','$Medications','$dt','$Occupational','$Diagnosis','$code2',NULL)";
     $res = $conn->query($ins);
     if ($res === TRUE) {
         $_SESSION['num'] = $num;
@@ -65,9 +66,9 @@ if (isset($_POST['submit'])) {
                 <div class="row">
                   <div class="col-sm-4"></div>
                   <form method="POST">
-                    <p><b>Enter patient Physio number and click on search to continue</b></p>
+                    <p><b>Enter System Physio number and click on search to continue</b></p>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Patient num</label>
+                      <label for="exampleInputEmail1">System Physio num</label>
                       <input type="text" name="id" required class="form-control" id="exampleInputEmail1" />
                   </div>
                   <button type="submit" class="btn btn-primary" name="Search">Search</button>
@@ -86,17 +87,25 @@ if (isset($_POST['submit'])) {
                   <input type="text" name="Pname" required readonly value="<?php echo($name) ?>" class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Physio Number</label>
+                  <input type="text" name="code2" value="<?php echo($code2)?>" readonly placeholder="Medications"  class="form-control" id="exampleInputEmail1" />
+                </div>
+                <div class="form-group">
                   <label for="exampleInputEmail1">Date of birth</label>
                   <input type="text" name="DOB"  required readonly value="<?php echo($dob) ?>" class="form-control" id="exampleInputEmail1" />
                   <input type="text" name="num" style="display: none;" value="<?php echo($id) ?>" class="form-control" id="exampleInputEmail1" />
                   <input type="text" name="rec" style="display: none;" value="<?php echo($rec_num) ?>" class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Treatment Dx</label>
+                  <label for="exampleInputEmail1">Treatment Date</label>
                   <input type="date" name="Treatment"  required  class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Past Medical/surgical Hx</label>
+                  <label for="exampleInputEmail1">Treatment Diagnosis</label>
+                  <textarea class="form-control" name="Diagnosis"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Past Medical/Surgical History</label>
                   <textarea class="form-control" name="history"></textarea>
                 </div>
                 <div class="form-group">

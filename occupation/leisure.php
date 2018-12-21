@@ -52,8 +52,9 @@ if (isset($_POST['submit'])) {
                                   <td>Education (formal and informal)<input type="text" name="issue[]" value="Education (formal and informal)" style="display: none;"></td>
                                   <td>
                                       <select name="answer[]" class="form-control">
-                                          <option value="impared">impared</option>
-                                          <option value="not impared">not impared</option>
+                                          <option value="impaired">impaired</option>
+                                          <option value="not impaired">not impaired</option>
+                                          <option value="Not applicable">Not Applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -64,8 +65,9 @@ if (isset($_POST['submit'])) {
                                   <td>Work Employment/Volunteer<input type="text" name="issue[]" value="Work Employment/Volunteer" style="display: none;"></td>
                                   <td>
                                       <select name="answer[]" class="form-control">
-                                          <option value="impared">impared</option>
-                                          <option value="not impared">not impared</option>
+                                          <option value="impaired">impaired</option>
+                                          <option value="not impaired">not impaired</option>
+                                          <option value="Not applicable">Not Applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -76,8 +78,9 @@ if (isset($_POST['submit'])) {
                                   <td>Leisure participation<input type="text" name="issue[]" value="Leisure participation" style="display: none;"></td>
                                   <td>
                                       <select name="answer[]" class="form-control">
-                                          <option value="impared">impared</option>
-                                          <option value="not impared">not impared</option>
+                                          <option value="impaired">impaired</option>
+                                          <option value="not impaired">not impaired</option>
+                                          <option value="Not applicable">Not Applicable</option>
                                       </select>
                                   </td>
                                   <td>
@@ -88,8 +91,9 @@ if (isset($_POST['submit'])) {
                                   <td>Social participation<input type="text" name="issue[]" value="Social participation" style="display: none;"></td>
                                   <td>
                                       <select name="answer[]" class="form-control">
-                                          <option value="impared">impared</option>
-                                          <option value="not impared">not impared</option>
+                                          <option value="impaired">impaired</option>
+                                          <option value="not impaired">not impaired</option>
+                                          <option value="Not applicable">Not Applicable</option>
                                       </select>
                                   </td>
                                   <td>

@@ -64,11 +64,11 @@ $rec = $_SESSION['rec'];
 										<input type="text" name="id" value="<?php echo $num; ?>" readonly class="form-control" id="exampleInputEmail1" />
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">Why are you seaaking treatment for your child</label>
+										<label for="exampleInputEmail1">Why are you seeking treatment for your child</label>
 										<input type="text" name="reason" required  class="form-control" id="exampleInputEmail1" />
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">has your child have any prior treatment and/or diagnostic testing for the condition stated above? &nbsp;&nbsp;&nbsp;</label>
+										<label for="exampleInputEmail1">Has your child have any prior treatment and/or diagnostic testing for the condition stated above? &nbsp;&nbsp;&nbsp;</label>
 										No<input type="radio" name="cardType" id="one" class="css-checkbox" value="no" checked>&nbsp;&nbsp;&nbsp;
 										Yes<input type="radio" name="cardType" id="two" class="css-checkbox" value="yes">
 									</div>

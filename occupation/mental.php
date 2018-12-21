@@ -98,10 +98,10 @@ if (isset($_POST['submit'])) {
                       <label>Female: <input type="radio" name="Gender" value="Female"></ins></label>
                   </div>
                 </div>
-                <div class="form-group">
+                <!--div class="form-group">
                   <label for="exampleInputEmail1">ID Code</label>
                   <input type="text" name="Code"  required  class="form-control" id="exampleInputEmail1" />
-                </div>
+                </div-->
                 <div class="form-group">
                   <label for="exampleInputEmail1">Ethnicity</label>
                   <div class="form-group">
@@ -122,16 +122,15 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                   <label for="exampleInputEmail1">Designation</label>
                   <div class="form-group">
-                      <label>Occupational Therapist: <input type="radio" name="Designation" value="Occupational Therapist"></ins></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <label>OT Support staff: <input type="radio" name="Designation" value="OOT Support staff"></ins></label>
-                  </div>
+                      <label>Occupational Therapist: <input checked="" type="radio" name="Designation" value="Occupational Therapist"></ins></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </div>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Date of first contact</label>
                   <input type="date" name="first" required class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Date of Initial Assessment</label>
+                  <label for="exampleInputEmail1">treatment date</label>
                   <input type="date" name="dt"  placeholder="Date of Initial Assessment" required class="form-control" id="exampleInputEmail1" />
                 </div>
                 <div class="form-group">

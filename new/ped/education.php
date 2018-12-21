@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
 										</tr>
 										<tr>
 											<td>
-												<input type="text" name="issue[]" value="has your child ever repeat a grade?" readonly class="form-control" id="exampleInputEmail1" />
+												<input type="text" name="issue[]" value="Has your child ever repeat a grade?" readonly class="form-control" id="exampleInputEmail1" />
 											</td>
 											<td>
 												<label>Yes <input type="checkbox" name="answer[]" value="yes"></label>&nbsp;&nbsp;&nbsp;
@@ -120,7 +120,7 @@ if (isset($_POST['submit'])) {
 										</tr>
 										<tr>
 											<td>
-												<input type="text" name="issue[]" class="form-control" value="Does your child have special education or theraohy services in school?" readonly />
+												<input type="text" name="issue[]" class="form-control" value="Does your child have special education or therapy services in school?" readonly />
 											</td>
 											<td>
 												<label>Yes <input type="checkbox" name="answer[]" value="yes"></label>&nbsp;&nbsp;&nbsp;
@@ -132,7 +132,7 @@ if (isset($_POST['submit'])) {
 										</tr>
 										<tr>
 											<td>
-												<input type="text" name="issue[]" class="form-control" value="Has your child receive theraphy anywhere else?" readonly />
+												<input type="text" name="issue[]" class="form-control" value="Has your child receive therapy anywhere else?" readonly />
 											</td>
 											<td>
 												<label>Yes <input type="checkbox" name="answer[]" value="yes"></label>&nbsp;&nbsp;&nbsp;
@@ -148,11 +148,11 @@ if (isset($_POST['submit'])) {
 										<input type="text" name="grade" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>How often does your child have special education or theraphy in school</label>
+										<label>How often does your child have special education or therapy in school</label>
 										<input type="text" name="often" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>How long does your child have special education or theraphy in school</label>
+										<label>How long does your child have special education or therapy in school</label>
 										<input type="text" name="long" class="form-control">
 									</div>
 									<div class="form-group">
@@ -164,15 +164,15 @@ if (isset($_POST['submit'])) {
 										<input type="text" name="sp_comment" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>Where did your child receive his additional theraphy service</label>
+										<label>Where did your child receive his additional therapy service</label>
 										<input type="text" name="tp_service" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>from whom did your child receive his additional theraphy service</label>
+										<label>From whom did your child receive his additional therapy service</label>
 										<input type="text" name="whom" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>Additional coments on theraphy service</label>
+										<label>Additional coments on therapy service</label>
 										<input type="text" name="tp_comment" class="form-control">
 									</div>
 									<div class="form-group">
@@ -180,7 +180,7 @@ if (isset($_POST['submit'])) {
 										<input type="text" name="religious" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>What goals are you hoping to have your child accomplish by partici[ating in Theraphy?</label>
+										<label>What goals are you hoping to have your child accomplish by partici[ating in Therapy?</label>
 										<input type="text" name="goal" class="form-control">
 									</div>
 

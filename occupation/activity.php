@@ -57,6 +57,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -73,6 +74,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -89,6 +91,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -105,6 +108,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -121,6 +125,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -137,6 +142,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -153,6 +159,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -169,6 +176,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -185,6 +193,7 @@ if (isset($_POST['submit'])) {
                                           <option value="Mod Asst">Mod Asst</option>
                                           <option value="Min Asst">Min Asst</option>
                                           <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
                                           <option value="independent">independent</option>
                                       </select>
                                   </td>
@@ -193,7 +202,24 @@ if (isset($_POST['submit'])) {
                                   </td>
                               </tr>
                               <tr>
-                                  <td>Other (e.g. sexual activity). <br>Please state this.<input type="text" name="issue[]" value="Other" style="display: none;"></td>
+                                  <td>Lower body dressing<input type="text" name="issue[]" value="Lower body dressing" style="display: none;"></td>
+                                  <td>
+                                      <select name="answer[]" class="form-control">
+                                          <option value="Dependent">Dependent</option>
+                                          <option value="DeMax Asst">Max Asst</option>
+                                          <option value="Mod Asst">Mod Asst</option>
+                                          <option value="Min Asst">Min Asst</option>
+                                          <option value="Supervision">Supervision</option>
+                                          <option value="Modified independent">modified independent</option>
+                                          <option value="independent">independent</option>
+                                      </select>
+                                  </td>
+                                  <td>
+                                      <textarea name="Comment[]" class="form-control" placeholder="Enter comment here"></textarea>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>Other. <br>Please state this.<input type="text" name="issue[]" value="Other" style="display: none;"></td>
                                   <td>
                                       <input type="text" name="answer[]" class="form-control" placeholder="enter other here">
                                   </td>
